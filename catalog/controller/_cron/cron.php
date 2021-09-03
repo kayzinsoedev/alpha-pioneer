@@ -1,16 +1,16 @@
 <?php
 class ControllerCronCron extends Controller {
-		
+
 	// for membership tier module - start
 	public function checkMembership() {
 		$incement = 1; // for year
 		$unit_txt = 'year';
 		//  $incement = 1; // for year
 		//  $unit_txt = 'months';
-			
+
 		$today = date('Y-m-d');
 		//$today = '2020-04-10';
-		
+
 		$query = $this->db->query("SELECT `date_added` AS membership_date, `customer_id` FROM `" . DB_PREFIX . "customer_membership_records` GROUP BY `customer_id` ORDER BY `date_added` DESC");
 		// Select all confirmed orders and group by customer
 		//$query = $this->db->query("SELECT SUM(`total`) AS total_spent, `customer_id`, `date_added` AS first_order_date FROM `" . DB_PREFIX . "order` WHERE (`order_status_id` = 2 OR `order_status_id` = 5) AND `customer_id` > 0 AND `total` > 0 GROUP BY `customer_id` ORDER BY `total_spent` DESC");
@@ -18,9 +18,9 @@ class ControllerCronCron extends Controller {
 			foreach($query->rows as $d) {
 				//debug($d['customer_id'].' - '. $d['membership_date']);
 				//debug($d['customer_id'].' - '.$d['total_spent']. ' - '.date('Y-m-d', strtotime($d['first_order_date'])));
-				
+
 				// $yr_count = 0;
-				
+
 				// $query3 = $this->db->query("SELECT year_count FROM `" . DB_PREFIX . "customer_membership_year_count` WHERE customer_id = '".$d['customer_id']."'");
 				// if($query3->num_rows) {
 				// 	$yr_count = $query3->row['year_count'];
@@ -37,7 +37,7 @@ class ControllerCronCron extends Controller {
 					if($query4->num_rows) {
 						$cur_customer_group_id = $query4->row['customer_group_id'];
 					}
-					
+
 					// $prev_total = 0;
 					// if($yr_count < $incement) {
 					// 	$yr_count_prev = $yr_count;
@@ -54,7 +54,7 @@ class ControllerCronCron extends Controller {
 					// 	//debug($query2->row['customer_id'].' - '.$query2->row['total_spent']);
 					// }
 					// $prev_membership = $this->getMembership($prev_total);
-					
+
 					// New
 					$cur_total = 0;
 					$sql_part = "(`date_added` >= '". $membership_date ."' AND `date_added` <= '". $today.' 23:59:59' ."')";
@@ -70,7 +70,7 @@ class ControllerCronCron extends Controller {
 					$new_membership = $this->getMembership($cur_total);
 					// debug('Cust ID: '.$d['customer_id'] .'<br>Membership Date: '. $membership_date . '<br>Membership Date After '.$incement.' '.$unit_txt.': '. $membership_date_after_a_period . '<br>' .
 					// 'Prev: '.$cur_customer_group_id.
-					// '<br>New: '.$cur_total. ' - '.$new_membership['customer_group_id'] 
+					// '<br>New: '.$cur_total. ' - '.$new_membership['customer_group_id']
 					// );
 					// If new membership is different than previous then only update membership
 					if($cur_customer_group_id != $new_membership['customer_group_id']) {
@@ -83,12 +83,12 @@ class ControllerCronCron extends Controller {
 				}
 			}
 		}
-	
+
 	}
 
 	public function notifyMembership() {
 		$today = date('Y-m-d');
-		
+
 		$query = $this->db->query("SELECT `date_added` AS membership_date, `customer_id` FROM `" . DB_PREFIX . "customer_membership_records` GROUP BY `customer_id` ORDER BY `date_added` DESC");
 		if($query->num_rows) {
 			foreach($query->rows as $d) {
@@ -103,7 +103,7 @@ class ControllerCronCron extends Controller {
 					}
 					$cur_total = 0;
 					$sql_part = "(`date_added` >= '". $membership_date ."' AND `date_added` <= '". $today.' 23:59:59' ."')";
-				
+
 					$sql = "SELECT SUM(`total`) AS total_spent, `customer_id` FROM `" . DB_PREFIX . "order` WHERE (`order_status_id` = 2 OR `order_status_id` = 5) AND `customer_id` = '".$d['customer_id']."' AND ".$sql_part." GROUP BY `customer_id` ORDER BY `total_spent` DESC";
 					$query2 = $this->db->query($sql);
 					//debug($sql);
@@ -138,9 +138,9 @@ class ControllerCronCron extends Controller {
 
 	//public function updateMembership($customer_id, $old_customer_group_id, $new_customer_group_id) {
 	public function updateMembership($d) {
-		$customer_id = $d['customer_id']; 
-		$old_customer_group_id = $d['old_customer_group_id']; 
-		$new_customer_group_id = $d['new_customer_group_id']; 
+		$customer_id = $d['customer_id'];
+		$old_customer_group_id = $d['old_customer_group_id'];
+		$new_customer_group_id = $d['new_customer_group_id'];
 		$this->db->query("UPDATE `" . DB_PREFIX . "customer` SET `customer_group_id` = '".$new_customer_group_id."' WHERE `customer_id` = '".$customer_id."'");
 		// add record for membership
 		$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_membership_records` SET `customer_id` = '".$customer_id."', `old_customer_group_id` = '".$old_customer_group_id."', `new_customer_group_id` = '".$new_customer_group_id."', `date_added` = NOW()");
@@ -148,9 +148,9 @@ class ControllerCronCron extends Controller {
 
 	//public function sendMembershipEmail($customer_id, $old_customer_group_id, $new_customer_group_id) {
 	public function sendMembershipEmail($d) {
-		$customer_id = $d['customer_id']; 
-		$old_customer_group_id = $d['old_customer_group_id']; 
-		$new_customer_group_id = $d['new_customer_group_id']; 
+		$customer_id = $d['customer_id'];
+		$old_customer_group_id = $d['old_customer_group_id'];
+		$new_customer_group_id = $d['new_customer_group_id'];
 		$this->load->model('account/customer');
 		$customer_info = $this->model_account_customer->getCustomer($customer_id);
 		$name = $customer_info['firstname'].' '.$customer_info['lastname'];
@@ -166,7 +166,7 @@ class ControllerCronCron extends Controller {
 		$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
 		$subject = 'Membership Update - '.$this->config->get('config_name');
 		$text = '';
-		$this->load->model('account/customer_group');	
+		$this->load->model('account/customer_group');
 		$old_customer_group_info = $this->model_account_customer_group->getCustomerGroup($old_customer_group_id);
 		$new_customer_group_info = $this->model_account_customer_group->getCustomerGroup($new_customer_group_id);
 		$message = '<b>Hi '.$name.',</b><br><br>';
@@ -197,7 +197,7 @@ class ControllerCronCron extends Controller {
 				'the_message' => $message,
 			),
 			);
-			
+
 			$this->model_tool_pro_email->generate($email_params);
 		}
 		else{
@@ -209,7 +209,7 @@ class ControllerCronCron extends Controller {
 		$query = $this->db->query("SELECT `min_spend_amount` FROM `" . DB_PREFIX . "customer_group` WHERE `customer_group_id` = '".$customer_group_id."'");
 		return $query->row['min_spend_amount'];
 	}
-	
+
 	private function sendReviewMembershipEmail($customer_id, $old_customer_group_id, $amt_diff) {
 	   $this->load->model('account/customer');
 	   $customer_info = $this->model_account_customer->getCustomer($customer_id);
@@ -226,10 +226,10 @@ class ControllerCronCron extends Controller {
 	   $mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
 	   $subject = 'Membership Reminder - '.$this->config->get('config_name');
 	   $text = '';
-	   $this->load->model('account/customer_group');	
+	   $this->load->model('account/customer_group');
 	   $old_customer_group_info = $this->model_account_customer_group->getCustomerGroup($old_customer_group_id);
 	   $message = '<b>Hi '.$name.',</b><br><br>';
-	   $message .= 'Your current membership will be reviewed after 3 months. You need to spend '.($amt_diff).' more in order to maintain the '.$old_customer_group_info['name'].' tier membership.';	
+	   $message .= 'Your current membership will be reviewed after 3 months. You need to spend '.($amt_diff).' more in order to maintain the '.$old_customer_group_info['name'].' tier membership.';
    //	$mail->setTo($this->config->get('config_email'));
 	   $mail->setTo($email);
 	   $mail->setFrom($this->config->get('config_email'));
@@ -249,7 +249,7 @@ class ControllerCronCron extends Controller {
 			   'the_message' => $message,
 		   ),
 		   );
-		   
+
 		   $this->model_tool_pro_email->generate($email_params);
 	   }
 	   else{
@@ -269,22 +269,22 @@ class ControllerCronCron extends Controller {
 
 			$oc = $this;
 			$language_id = $this->config->get('config_language_id');
-			
+
 			$modulename  = 'setting_birthdaycoupon';
 			$module_data['coupon_type'] = $Modulehelper->get_field ( $oc, $modulename, $language_id, 'coupon_type');
 			$module_data['coupon_value'] = $Modulehelper->get_field ( $oc, $modulename, $language_id, 'coupon_value');
 			$module_data['coupon_min_use'] = $Modulehelper->get_field ( $oc, $modulename, $language_id, 'coupon_min_use');
 			$module_data['coupon_prefix'] = $Modulehelper->get_field ( $oc, $modulename, $language_id, 'coupon_prefix');
-			
+
 			// GET DAYS IN CURRENT MONTH RANGE
 			$first_day_this_month = date('Y-m-01');
 			$last_day_this_month  = date('Y-m-t');
 
 			$currentDate = date('Y-m-d');
 			$endDate = date('Y-m-d', (strtotime('+30 days', strtotime(date('Y-m-d')))));
-			
+
 			$currentMonth = date('M');
-			
+
 			$this->load->model('account/customer');
 
 			// GET CUSTOMERS BIRTHDAY THIS MONTH
@@ -296,11 +296,11 @@ class ControllerCronCron extends Controller {
 				{
 					// RUNNING NUMBER
 					$coupon_last = $this->model_account_customer->getBirthdayCouponLastID();
-		
+
 					$total_running_number = 6;
-					
+
 					$couponcode_running = str_pad($coupon_last, $total_running_number, "0", STR_PAD_LEFT);
-		
+
 					$data['name'] = "Birthday".$currentMonth."_".$coupon_last;
 					$data['code'] = $module_data['coupon_prefix']."_".$couponcode_running;
 					$data['discount'] = $module_data['coupon_value'];
@@ -313,9 +313,9 @@ class ControllerCronCron extends Controller {
 					$data['uses_total'] = 1;
 					$data['uses_customer'] = 1;
 					$data['status'] = 1;
-		
+
 					$data['coupon_customer'] = $birthday_customer_list[$x]['customer_id'];
-					
+
 					$this->model_account_customer->addCoupon($data);
 
 					$customeremail = $this->model_account_customer->findCustomerEmailByID($data['coupon_customer']);
@@ -323,11 +323,11 @@ class ControllerCronCron extends Controller {
 					$this->load->language('mail/birthday');
 					//SEND EMAIL OUT
 					$subject = $this->language->get('text_subject');
-					
+
 					$message = $this->language->get('text_welcome') . "\n\n";
 					$message .= $this->language->get('text_message') . "\n\n";
 					$message .= $data['code'];
-			
+
 					$mail = new Mail();
 					$mail->protocol = $this->config->get('config_mail_protocol');
 					$mail->parameter = $this->config->get('config_mail_parameter');
@@ -336,14 +336,14 @@ class ControllerCronCron extends Controller {
 					$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
 					$mail->smtp_port = $this->config->get('config_mail_smtp_port');
 					$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-					
+
 					$mail->setTo($customeremail);
 					$mail->setFrom($this->config->get('config_email'));
 					$mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
 					$mail->setSubject($subject);
 					$mail->setText($message);
 					// $mail->send();
-			
+
 					// Pro email Template Mod
 					if($this->config->get('pro_email_template_status')){
 						$this->load->model('tool/pro_email');
@@ -374,7 +374,7 @@ class ControllerCronCron extends Controller {
 								'coupon_minimum' => $coupon_minimum,
 							),
 						);
-						
+
 						$this->model_tool_pro_email->generate($email_params);
 					}
 					else{
@@ -421,9 +421,9 @@ class ControllerCronCron extends Controller {
 					$customers = $this->model_account_customer->getCustomersByCustomerGroup($customer_group_id);
 
 					foreach ($customers as $customer) {
-						
+
 						$customer_id = $customer['customer_id'];
-						
+
 						$points = $this->model_account_customer->getRewardTotalByCustomerId($customer_id, $start_date, $end_date);
 
 						if ($points > 0) {
@@ -433,7 +433,7 @@ class ControllerCronCron extends Controller {
 					} /* foreach customer */
 
 				} /* if today = clear date*/
-			
+
 			} /* foreach reward dates */
 
 		} /* foreach customer */
@@ -480,9 +480,9 @@ class ControllerCronCron extends Controller {
 				}
 				$product_table .= '</tbody>';
 				$product_table .= '</table>';
-					
+
 				$subject = $this->language->get('text_subject') . date('j F Y, l, H:i');
-				
+
 				$message = $this->language->get('text_welcome') . "\n\n";
 				$message .= $this->language->get('text_message') . "\n\n";
 
@@ -494,7 +494,7 @@ class ControllerCronCron extends Controller {
 				$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
 				$mail->smtp_port = $this->config->get('config_mail_smtp_port');
 				$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-				
+
 				$mail->setTo($this->config->get('config_email'));
 				$mail->setFrom($this->config->get('config_email'));
 				$mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
@@ -511,7 +511,7 @@ class ControllerCronCron extends Controller {
 						'mail' => $mail,
 						'product_table' => $product_table
 					);
-					
+
 					$this->model_tool_pro_email->generate($email_params);
 				}
 				else{
