@@ -357,15 +357,15 @@ h2.price {
     #column-left  .product-layout .col-md-3 {
 		width: 100%;
 	}
-	
+
 	#column-left + #content .product-layout .col-md-3 {
 		width: 50%;
 	}
-	
+
 	#column-left + #content + #column-right .product-layout .col-md-3 {
 		width: 100%;
 	}
-	
+
     #content + #column-right .product-layout .col-md-3 {
 		width: 100%;
 	}
@@ -392,7 +392,7 @@ h2.price {
 	top: 0px;
 	/*display: flex;
 	justify-content: center;*/
-	
+
 	width: 24px;
 	height: 100%;
 }
@@ -427,14 +427,14 @@ h2.price {
 	height: 10px;
 }
 
-.owl-dots > *:hover, 
+.owl-dots > *:hover,
 .owl-dots > *.active:hover,
-.owl-dots > *.active{ 
+.owl-dots > *.active{
 	background: #999;
 }
 
-/* html .live-search .result-text{ 
-	line-height: 34px; 
+/* html .live-search .result-text{
+	line-height: 34px;
 } */
 
 html .live-search ul{
@@ -508,33 +508,33 @@ html .live-search ul{
   .pd-t15 {
 	padding-top: 15px;
   }
-  
+
   .pd-b15 {
 	padding-bottom: 15px;
   }
-  
+
   .pd-l15 {
 	padding-left: 15px;
   }
-  
+
   .pd-r15 {
 	padding-right: 15px;
   }
-  
+
   .pd-30 {
 	padding: 30px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-30 {
 	  padding: 20px;
 	}
   }
-  
+
   .pd-t30, .pagination {
 	padding-top: 30px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-t30, .pagination {
 	  padding-top: 20px;
@@ -544,7 +544,7 @@ html .live-search ul{
   .pd-b30 {
 	padding-bottom: 30px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-b30 {
 	  padding-bottom: 20px;
@@ -560,51 +560,51 @@ html .live-search ul{
 	  padding-bottom: 10px;
 	}
   }
-  
+
   .pd-l30 {
 	padding-left: 30px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-l30 {
 	  padding-left: 20px;
 	}
   }
-  
+
   .pd-r30 {
 	padding-right: 30px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-r30 {
 	  padding-right: 20px;
 	}
   }
-  
+
   .pd-40 {
 	padding: 40px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-40 {
 	  padding: 30px;
 	}
   }
-  
+
   .pd-t40 {
 	padding-top: 40px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-t40 {
 	  padding-top: 30px;
 	}
   }
-  
+
   .pd-b40 {
 	padding-bottom: 40px;
   }
-  
+
   @media (max-width: 1300px) {
 	.pd-b40 {
 	  padding-bottom: 30px;
@@ -624,10 +624,10 @@ html .live-search ul{
 
   .no-border {
 		border: none !important;
-	}  
-	
-	.z1 { 
-		z-index: 1; 
+	}
+
+	.z1 {
+		z-index: 1;
 	}
 
 	.bootstrap-datetimepicker-widget .datepicker .day.disabled{
@@ -656,7 +656,7 @@ html .live-search ul{
 	border-color: #000 #000 transparent transparent;
 	z-index: 1;
 }
-  
+
 @media (max-width: 1300px) {
 	.corner-badge::after {
 		border-width: 60px;
@@ -762,7 +762,7 @@ html .live-search ul{
 }
 /* refer from bootstrap 4 */
 
-/* recaptcha horizontal center */    
+/* recaptcha horizontal center */
 /* for mobile */
 #google_recaptcha .g-recaptcha {
 	transform: scale(0.8);
@@ -1047,7 +1047,7 @@ html .live-search ul{
     justify-content: center;
 }
 #login-box .d_socail_login_header {
- 	text-align: center; 
+ 	text-align: center;
     width: 100%;
     display: table;
     table-layout: fixed;
@@ -1056,7 +1056,7 @@ html .live-search ul{
     display: table-cell;
     position: relative;
 }
-#login-box .d_socail_login_header>*:nth-child(1)::before, 
+#login-box .d_socail_login_header>*:nth-child(1)::before,
 #login-box .d_socail_login_header>*:nth-child(3)::before {
     content: '';
     display: block;
@@ -1437,7 +1437,7 @@ body.product-product .product-image-additional-container img {
     font-weight: bold;
     font-size: 18px;
 }
-.product_countdown_box {    
+.product_countdown_box {
 	display: flex;
     margin: 8px 0 0 0;
     justify-content: center;
@@ -1486,7 +1486,7 @@ body.product-product .product-image-additional-container img {
 }
 .product-product #product-tabs li a:hover,
 .product-product #product-tabs li.active a{
-	color:#000!important;
+	color:#000;
 	font-weight: bold;
 	/* text-decoration: underline!important; */
 }
@@ -1681,9 +1681,9 @@ div.required .control-label:after {
 	font-weight: bold;
 	margin-bottom: 20px;
 }
-.quickcheckout-checkout #checkout .quickcheckout-heading, 
-.quickcheckout-checkout #shipping-method .quickcheckout-heading, 
-.quickcheckout-checkout #payment-method .quickcheckout-heading, 
+.quickcheckout-checkout #checkout .quickcheckout-heading,
+.quickcheckout-checkout #shipping-method .quickcheckout-heading,
+.quickcheckout-checkout #payment-method .quickcheckout-heading,
 .quickcheckout-checkout #payment-address .quickcheckout-heading,
 .quickcheckout-checkout #shipping-address .quickcheckout-heading {
     padding: 10px!important;
@@ -1691,17 +1691,17 @@ div.required .control-label:after {
     background-color: #dddddd!important;
 	color:#000;
 }
-.quickcheckout-checkout #checkout, 
-.quickcheckout-checkout #shipping-method, 
-.quickcheckout-checkout #payment-method, 
+.quickcheckout-checkout #checkout,
+.quickcheckout-checkout #shipping-method,
+.quickcheckout-checkout #payment-method,
 .quickcheckout-checkout #payment-address,
 .quickcheckout-checkout #shipping-address {
     border: 1px solid #cacaca;
     margin-bottom: 10px;
 }
-.quickcheckout-checkout #checkout .quickcheckout-content, 
-.quickcheckout-checkout #shipping-method .quickcheckout-content, 
-.quickcheckout-checkout #payment-method .quickcheckout-content, 
+.quickcheckout-checkout #checkout .quickcheckout-content,
+.quickcheckout-checkout #shipping-method .quickcheckout-content,
+.quickcheckout-checkout #payment-method .quickcheckout-content,
 .quickcheckout-checkout #payment-address .quickcheckout-content,
 .quickcheckout-checkout #shipping-address .quickcheckout-content {
     padding: 10px!important;
@@ -1775,14 +1775,14 @@ option:disabled {
 	color:#000;
 }
 .account-container div.user_info h3{
-    font-size: 24px;	
+    font-size: 24px;
 	margin-bottom:0px;
 }
-.account-container a:hover, 
+.account-container a:hover,
 .account-container a:focus {
     border: 1px solid #000000 !important;
 }
-.account-container a:hover .icon-font:before, 
+.account-container a:hover .icon-font:before,
 .account-container a:focus .icon-font:before {
     color: #000000 !important;
 }
@@ -1893,7 +1893,7 @@ option:disabled {
 		display:block;
 	}
 	.account-container_left{
-		width:100%; 
+		width:100%;
 	}
 	.account-container_left{
 		background-image:none!important;

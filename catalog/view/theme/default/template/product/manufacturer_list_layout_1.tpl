@@ -37,7 +37,9 @@
                   </div>
 
               <?php } ?>
+
           </div>
+          <div class="pagination_container"><?= $pagination ?></div>
       <?php } else { ?>
       <div class="text-center"><?php echo $text_empty; ?></div>
       <div class="buttons text-center clearfix">

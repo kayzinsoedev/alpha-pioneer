@@ -23,18 +23,18 @@ class ModelCustomerCustomer extends Model {
 			$index = 0;
 
 			foreach ($data['address'] as $address) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET 
-				customer_id = '" . (int)$customer_id . "', 
-				firstname = '" . $this->db->escape($address['firstname']) . "', 
-				lastname = '" . $this->db->escape($address['lastname']) . "', 
-				telephone = '" . $this->db->escape($address['telephone']) . "', 
-				company = '" . $this->db->escape($address['company']) . "', 
-				address_1 = '" . $this->db->escape($address['address_1']) . "', 
-				address_2 = '" . $this->db->escape($address['address_2']) . "', 
-				unit_no = '" . $this->db->escape($address['unit_no']) . "', 
-				city = '" . $this->db->escape($address['city']) . "', 
-				postcode = '" . $this->db->escape($address['postcode']) . "', 
-				country_id = '" . (int)$address['country_id'] . "', 
+				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET
+				customer_id = '" . (int)$customer_id . "',
+				firstname = '" . $this->db->escape($address['firstname']) . "',
+				lastname = '" . $this->db->escape($address['lastname']) . "',
+				telephone = '" . $this->db->escape($address['telephone']) . "',
+				company = '" . $this->db->escape($address['company']) . "',
+				address_1 = '" . $this->db->escape($address['address_1']) . "',
+				address_2 = '" . $this->db->escape($address['address_2']) . "',
+				unit_no = '" . $this->db->escape($address['unit_no']) . "',
+				city = '" . $this->db->escape($address['city']) . "',
+				postcode = '" . $this->db->escape($address['postcode']) . "',
+				country_id = '" . (int)$address['country_id'] . "',
 				zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? json_encode($address['custom_field']) : '') . "'");
 
 				if (isset($address['default'])) {
@@ -51,11 +51,11 @@ class ModelCustomerCustomer extends Model {
 
 			$query = $this->db->query('SELECT address_id FROM `' . DB_PREFIX . 'customer` WHERE customer_id="' . (int)$customer_id . '"');
 			if($query->num_rows && !$query->row['address_id']){
-				$this->db->query('UPDATE `' . DB_PREFIX . 'customer` SET 
+				$this->db->query('UPDATE `' . DB_PREFIX . 'customer` SET
 				address_id="' . (int)$first_address_id . '" WHERE customer_id="' . (int)$customer_id . '"');
 			}
 		}
-		
+
 		return $customer_id;
 	}
 
@@ -91,17 +91,17 @@ class ModelCustomerCustomer extends Model {
 					$address['custom_field'] = array();
 				}
 
-				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET 
-				address_id = '" . (int)$address['address_id'] . "', 
-				customer_id = '" . (int)$customer_id . "', 
-				firstname = '" . $this->db->escape($address['firstname']) . "', 
-				lastname = '" . $this->db->escape($address['lastname']) . "', 
-				telephone = '" . $this->db->escape($address['telephone']) . "', 
-				company = '" . $this->db->escape($address['company']) . "', 
-				address_1 = '" . $this->db->escape($address['address_1']) . "', 
-				address_2 = '" . $this->db->escape($address['address_2']) . "', 
-				unit_no = '" . $this->db->escape($address['unit_no']) . "', 
-				city = '" . $this->db->escape($address['city']) . "', 
+				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET
+				address_id = '" . (int)$address['address_id'] . "',
+				customer_id = '" . (int)$customer_id . "',
+				firstname = '" . $this->db->escape($address['firstname']) . "',
+				lastname = '" . $this->db->escape($address['lastname']) . "',
+				telephone = '" . $this->db->escape($address['telephone']) . "',
+				company = '" . $this->db->escape($address['company']) . "',
+				address_1 = '" . $this->db->escape($address['address_1']) . "',
+				address_2 = '" . $this->db->escape($address['address_2']) . "',
+				unit_no = '" . $this->db->escape($address['unit_no']) . "',
+				city = '" . $this->db->escape($address['city']) . "',
 				postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? json_encode($address['custom_field']) : '') . "'");
 
 				if (isset($address['default'])) {
@@ -119,7 +119,7 @@ class ModelCustomerCustomer extends Model {
 
 			$query = $this->db->query('SELECT address_id FROM `' . DB_PREFIX . 'customer` WHERE customer_id="' . (int)$customer_id . '"');
 			if($query->num_rows && !$query->row['address_id']){
-				$this->db->query('UPDATE `' . DB_PREFIX . 'customer` SET 
+				$this->db->query('UPDATE `' . DB_PREFIX . 'customer` SET
 				address_id="' . (int)$first_address_id . '" WHERE customer_id="' . (int)$customer_id . '"');
 			}
 		}
@@ -135,7 +135,7 @@ class ModelCustomerCustomer extends Model {
 		// $mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->log, $this->session, $this->url);
 		// $mailchimp_integration->send(array('customer_id' => $customer_id));
 		// end: mailchimp_integration.xml
-		
+
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_authentication WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_activity WHERE customer_id = '" . (int)$customer_id . "'");
@@ -260,7 +260,7 @@ class ModelCustomerCustomer extends Model {
 			}
 
 			$this->load->model('localisation/language');
-			
+
 			$language_info = $this->model_localisation_language->getLanguage($customer_info['language_id']);
 
 			if ($language_info) {
@@ -272,7 +272,7 @@ class ModelCustomerCustomer extends Model {
 			$language = new Language($language_code);
 			$language->load($language_code);
 			$language->load('mail/customer');
-				
+
 			$message  = sprintf($language->get('text_approve_welcome'), html_entity_decode($store_name, ENT_QUOTES, 'UTF-8')) . "\n\n";
 			$message .= $language->get('text_approve_login') . "\n";
 			$message .= $store_url . "\n\n";
@@ -308,7 +308,7 @@ class ModelCustomerCustomer extends Model {
 					'firstname' => $customer_info['firstname'],
 					),
 				);
-				
+
 				$this->model_tool_pro_email->generate($email_params);
 			}
 			else{
@@ -537,7 +537,7 @@ class ModelCustomerCustomer extends Model {
 					'total' => $this->currency->format($this->getTransactionTotal($customer_id), $this->config->get('config_currency')),
 					),
 				);
-				
+
 				$this->model_tool_pro_email->generate($email_params);
 			}
 			else{
@@ -633,7 +633,7 @@ class ModelCustomerCustomer extends Model {
 					'total' => $this->getRewardTotal($customer_id),
 					),
 				);
-				
+
 				$this->model_tool_pro_email->generate($email_params);
 			}
 			else{
@@ -680,7 +680,7 @@ class ModelCustomerCustomer extends Model {
 		}
 
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
-		
+
 		return $query->rows;
 	}
 
@@ -718,17 +718,17 @@ class ModelCustomerCustomer extends Model {
 			if($data['newsletter'] == 1) {
 				$query = $this->db->query("SELECT email FROM " . DB_PREFIX . "customer_newsletter_list WHERE email = '" . $this->db->escape($data['email']) . "'");
 
-				if($query->num_rows == 0){ 
+				if($query->num_rows == 0){
 					// save record to database
 					$this->db->query("INSERT INTO " . DB_PREFIX . "customer_newsletter_list SET customer_id = '".(int)$customer_id."', email = '" . $this->db->escape($data['email']) . "', date_added = NOW()");
-				
+
 					$mailchimp_param = array('email_address' => $data['email'], 'status' => 'subscribed');
-					$chimp = $the_mailchimp->subscribeTheSubscriber($mailchimp, $mailchimp_param); 
+					$chimp = $the_mailchimp->subscribeTheSubscriber($mailchimp, $mailchimp_param);
 				}
 				else {
 					// resubscribe
 					$mailchimp_param = array('email_address' => $data['email']);
-					$chimp = $the_mailchimp->resubscribeTheSubscriber($mailchimp, $mailchimp_param); 
+					$chimp = $the_mailchimp->resubscribeTheSubscriber($mailchimp, $mailchimp_param);
 
 					$this->db->query("UPDATE " . DB_PREFIX . "customer_newsletter_list SET status = '1' WHERE email = '" . $this->db->escape($data['email']) . "'");
 				}
@@ -738,10 +738,10 @@ class ModelCustomerCustomer extends Model {
 			// unsubscribe
 			else if($data['newsletter'] == 0) {
 				$mailchimp_param = array('email_address' => $data['email']);
-				$chimp = $the_mailchimp->unsubcribeTheSubscriber($mailchimp, $mailchimp_param); 
+				$chimp = $the_mailchimp->unsubcribeTheSubscriber($mailchimp, $mailchimp_param);
 
 				$this->db->query("UPDATE " . DB_PREFIX . "customer_newsletter_list SET status = '0' WHERE email = '" . $this->db->escape($data['email']) . "'");
-			} 
+			}
 
 			// update newsletter in customer
 			$this->db->query("UPDATE " . DB_PREFIX . "customer SET newsletter = '".$subscribe."' WHERE email = '".$data['email']."'");

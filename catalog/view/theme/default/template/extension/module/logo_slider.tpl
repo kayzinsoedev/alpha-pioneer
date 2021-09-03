@@ -10,7 +10,7 @@
 </div>
 
 <div class="view-all-btn ">
-        <a href="<?=$link;?>" class="btn-primary">View All</a>
+        <a href="<?=$link;?>" class="btn-primary btn-gradient">View All</a>
 </div>
 
 

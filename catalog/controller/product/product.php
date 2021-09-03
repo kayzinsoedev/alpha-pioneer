@@ -3,11 +3,11 @@ class ControllerProductProduct extends Controller {
 	private $error = array();
 
 	public function index() {
-		// test branches 
+		// test branches
 
 		$this->load->language('product/category');
 
-		// << Related Options / Связанные опции  
+		// << Related Options / Связанные опции
 		$this->load->language('module/related_options');
 		$data['text_ro_clear_options'] 			= $this->language->get('text_ro_clear_options');
 		// >> Related Options / Связанные опции
@@ -15,8 +15,8 @@ class ControllerProductProduct extends Controller {
 		// to test request
 
 		$this->load->language('product/product');
-		
-		// << Related Options / Связанные опции  
+
+		// << Related Options / Связанные опции
 		$this->load->language('module/related_options');
 		$data['text_ro_clear_options'] 			= $this->language->get('text_ro_clear_options');
 		// >> Related Options / Связанные опции
@@ -175,7 +175,7 @@ class ControllerProductProduct extends Controller {
 
 		if (isset($this->request->get['product_id'])) {
 			$product_id = (int)$this->request->get['product_id'];
-		} 
+		}
 
 		$this->load->model('catalog/product');
 
@@ -186,7 +186,7 @@ class ControllerProductProduct extends Controller {
 			if ($this->customer->isLogged()) {
 				$this->model_extension_module_recently_viewed->setRecentlyViewedProducts($this->customer->getId(), $product_info['product_id']);
 			} else {
-			
+
 				if(isset($this->request->cookie['recently_viewed']) && !empty($this->request->cookie['recently_viewed'])) {
 					$recently_viewed = json_decode(base64_decode($this->request->cookie['recently_viewed']), true);
 					$recently_viewed[$product_info['product_id']] = date("Y-m-d H:i:s");
@@ -196,11 +196,13 @@ class ControllerProductProduct extends Controller {
 				} else {
 					$recently_viewed[$product_info['product_id']] = date("Y-m-d H:i:s");
 				}
-				
+
 				$recently_viewed = base64_encode(json_encode($recently_viewed));
 				setcookie('recently_viewed', $recently_viewed, 0, '/', $this->request->server['HTTP_HOST']);
 			}
 		}
+
+
 
 		$data['quantityincrementdecrement_status'] = $this->config->get('quantityincrementdecrement_status');
 
@@ -211,7 +213,7 @@ class ControllerProductProduct extends Controller {
 
 			$this->document->addStyle('catalog/view/javascript/slick/slick.css');
 			$this->document->addScript('catalog/view/javascript/slick/slick-custom.min.js');
-			
+
 			$this->facebookcommonutils = new FacebookCommonUtils();
 			$params = new DAPixelConfigParams(array(
 			'eventName' => 'ViewContent',
@@ -276,9 +278,17 @@ class ControllerProductProduct extends Controller {
 			}
 
 			$data['breadcrumbs'][] = array(
+				'text' => 'Shop',
+				'href' => $this->url->link('product/category')
+			);
+
+			$data['breadcrumbs'][] = array(
 				'text' => $product_info['name'],
 				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
 			);
+
+
+
 
 			$this->document->setTitle($product_info['meta_title']);
 			$this->document->setDescription($product_info['meta_description']);
@@ -289,7 +299,7 @@ class ControllerProductProduct extends Controller {
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
 			$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
-			
+
 			$data['product_zoom'] = false;
 			if($this->config->get( $this->config->get('config_theme') . '_product_zoom')){
 				$data['product_zoom'] = true;
@@ -300,7 +310,7 @@ class ControllerProductProduct extends Controller {
 			$data['wishlist']  =array();
 			// Visit From Search / Google
 			if( isset($this->request->get['product_id']) && !isset($this->request->get['path']) ){
-				$product_id = $this->request->get['product_id']; 
+				$product_id = $this->request->get['product_id'];
 				$categories = $this->model_catalog_product->getProductMainCategories($product_id);
 
 				if($categories){
@@ -309,7 +319,7 @@ class ControllerProductProduct extends Controller {
 					$categories = end($categories);
 					if(isset($categories['path_id'])){
 						$category_info = $this->model_catalog_category->getCategory($categories['path_id']);
-						
+
 						if($category_info){
 							$data['heading_title'] = $category_info['name'];
 						}
@@ -317,9 +327,10 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 
+
 			// Get wishlist
 			$this->load->model('account/wishlist');
-			
+
             if ($this->customer->isLogged()) {
                 $wishlists = $this->model_account_wishlist->getWishlist();
             }else{
@@ -327,7 +338,7 @@ class ControllerProductProduct extends Controller {
                 if(isset($this->session->data['wishlist'])){
                     foreach($this->session->data['wishlist'] as $w_pid){
                         $wishlists[]['product_id'] = $w_pid;
-                        
+
                     }
                 }
             }
@@ -350,7 +361,7 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 
-			// << Related Options / Связанные опции 
+			// << Related Options / Связанные опции
 				if ( !$this->model_module_related_options ) {
 					$this->load->model('module/related_options');
 				}
@@ -361,7 +372,7 @@ class ControllerProductProduct extends Controller {
 				} elseif ( isset($this->request->get['product_id']) ) {
 					$ro_product_id = $this->request->get['product_id'];
 				} elseif ( isset($this->request->post['product_id']) ) {
-					$ro_product_id = $this->request->post['product_id'];	
+					$ro_product_id = $this->request->post['product_id'];
 				} else {
 					$ro_product_id = $this->request->get['product'];
 				}
@@ -390,8 +401,10 @@ class ControllerProductProduct extends Controller {
 					foreach ($data['ro_scripts'] as $ro_script) {
 						$this->journal2->minifier->addScript($ro_script);
 					}
-				} 
-				
+				}
+
+
+
 			// >> Related Options / Связанные опции ]]>
 
 
@@ -438,7 +451,7 @@ class ControllerProductProduct extends Controller {
             $data['product_title'] = $product_info['name'];
             $data['prod_image'] = $product_info['image'];
             // >>OPTIONS IMAGE
-            
+
 			$data['tab_description'] = $this->language->get('tab_description');
 			$data['tab_attribute'] = $this->language->get('tab_attribute');
 			$data['tab_review'] = sprintf($this->language->get('tab_review'), $product_info['reviews']);
@@ -458,13 +471,13 @@ class ControllerProductProduct extends Controller {
 		        $data['text_available_offers'] = $this->language->get("text_available_offers");
 	        }
 			/* completecombo */
-			
+
 			$data['enquiry'] = $product_info['price']>0?false:true;
 
 			$data['text_enquiry_item'] = $this->language->get('text_enquiry_item');
 
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
-			
+
 			$data['stock'] = $this->language->get('text_instock');
 
 			if ($product_info['quantity'] <= 0) {
@@ -492,7 +505,7 @@ class ControllerProductProduct extends Controller {
 			$image_additional_height = $this->config->get( $theme . '_image_additional_height');
 
 			$data['vertical_slider'] = $this->config->get( $theme . '_vertical_thumbnails');
-			
+
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
 
 			$data['images'] = array();
@@ -511,7 +524,7 @@ class ControllerProductProduct extends Controller {
 					'zoom' => $this->model_tool_image->resize('no_image.png', $image_thumb_width*2, $image_thumb_height*2)
 				);
 			}
-			
+
 
 			foreach ($results as $result) {
 				if( is_file(DIR_IMAGE . $result['image'])) {
@@ -528,9 +541,9 @@ class ControllerProductProduct extends Controller {
 					);
 				}
 			}
-			
+
 			$data['additional_images'] = array();
-			
+
 			if( is_file(DIR_IMAGE . $product_info['image'])) {
 				$data['additional_images'][] = array(
 					'popup' => $this->model_tool_image->resize($product_info['image'], $image_popup_width, $image_popup_height),
@@ -565,7 +578,7 @@ class ControllerProductProduct extends Controller {
                 } else {
 					$data['price'] = $this->currency->format2($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
                 }
-			} 
+			}
 
 			$data['special'] = false;
 
@@ -575,7 +588,7 @@ class ControllerProductProduct extends Controller {
                 } else {
 					$data['special'] = $this->currency->format2($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
                 }
-			} 
+			}
 
 			$data['special_start']      = $product_info['special_start'];
 			$data['special_end']        = $product_info['special_end'];
@@ -586,7 +599,7 @@ class ControllerProductProduct extends Controller {
 
 			if ($this->config->get('config_tax')) {
 				$data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
-			} 
+			}
 
 			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
 
@@ -604,7 +617,7 @@ class ControllerProductProduct extends Controller {
 	        }
 			/* completecombo */
 
-			
+
 			$data['discounts'] = array();
 
 			foreach ($discounts as $discount) {
@@ -662,10 +675,11 @@ class ControllerProductProduct extends Controller {
 				);
 			}
 
+
 			$data['minimum'] = 1;
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
-			} 
+			}
 
 			$data['review_status'] = $this->config->get('config_review_status');
 
@@ -675,8 +689,8 @@ class ControllerProductProduct extends Controller {
 
 				$data['purchased'] = 1;
 
-				
-				
+
+
 				if ($this->config->get('config_review_after_purchase')) {
 					$this->load->model('account/order');
 					$order_exists = $this->model_account_order->getOrderProductById($product_id);
@@ -703,7 +717,7 @@ class ControllerProductProduct extends Controller {
 			$data['customer_name'] = '';
 			if ($this->customer->isLogged()) {
 				$data['customer_name'] = $this->customer->getFirstName() . '&nbsp;' . $this->customer->getLastName();
-			} 
+			}
 
 			$data['reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);
 			$data['rating'] = (int)$product_info['rating'];
@@ -712,8 +726,8 @@ class ControllerProductProduct extends Controller {
 			$data['captcha'] = '';
 			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('review', (array)$this->config->get('config_captcha_page'))) {
 				$data['captcha'] = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha'));
-			} 
-			
+			}
+
 			$data['download'] = $this->model_catalog_product->getProductDownload($product_id);
 
 			if($data['download']){
@@ -771,12 +785,12 @@ class ControllerProductProduct extends Controller {
 			if($ro_settings){
 				$data['product_has_ro'] = $this->model_module_related_options->productHasRO($this->request->get['product_id']);
 			}
-			
+
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
 
 			//FACEBOOK EVENT - VIEWCONTENT
 			if($this->config->get('setting_facebookevents_status') == 1){
-	
+
 				$currency_code = $this->session->data['currency'];
 
 				//CHECK FOR PRODUCT PRICE WITH AND WITHOUT DISCOUNT
@@ -785,7 +799,7 @@ class ControllerProductProduct extends Controller {
 				}else{
 					$fb_price = bcdiv($product_info['price'], 1, 2);
 				}
-				
+
 				$data['facebook_events'] = "
 					<script type='text/javascript'>
 						if (typeof fbq == 'function') {
@@ -807,7 +821,7 @@ class ControllerProductProduct extends Controller {
 			$data = $this->load->controller('common/common', $data); // Load header, footer, column left, right, top, bottom
 
 			$data['inner_layout'] = $this->config->get('theme_default_product_inner_layout');
-			
+
 			if(isset($this->request->get['cart_id'])){
 				$cart_info = $this->cart->getProducts($this->request->get['cart_id']);
 				if($cart_info){
@@ -823,7 +837,9 @@ class ControllerProductProduct extends Controller {
 				$data['existing_cart'] = 0;
 				$data['update_cart'] = 0;
 			}
-			
+
+
+
 			$this->response->setOutput($this->load->view('product/product/product', $data));
 		} else {
 			$url = '';
@@ -915,7 +931,7 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->language('product/product');
 
-		// << Related Options / Связанные опции  
+		// << Related Options / Связанные опции
 		$this->load->language('module/related_options');
 		$data['text_ro_clear_options'] 			= $this->language->get('text_ro_clear_options');
 		// >> Related Options / Связанные опции
@@ -969,7 +985,7 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->language('product/product');
 
-		// << Related Options / Связанные опции  
+		// << Related Options / Связанные опции
 		$this->load->language('module/related_options');
 		$data['text_ro_clear_options'] 			= $this->language->get('text_ro_clear_options');
 		// >> Related Options / Связанные опции
@@ -1011,25 +1027,25 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
-	// Extension: live price update 
+	// Extension: live price update
 	public function updatePrice() {
 		$json = array();
-		
+
 		$this->load->model('catalog/product');
-		
+
 		$product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
-		
+
 		$option_price = 0;
-		
+
 		if(isset($this->request->post['option']) && $this->request->post['option']) {
 			foreach($this->request->post['option'] as $product_option_id => $value) {
-			
+
 				$result = $this->model_catalog_product->getUpdateOptionsList($this->request->get['product_id'], $product_option_id);
-				
-				if($result) {				
+
+				if($result) {
 					if($result['type'] == 'select' || $result['type'] == 'radio') {
 						$option_values = $this->model_catalog_product->getUpdateOptionValues($value, $product_option_id);
-						
+
 						if($option_values) {
 							if ($option_values['price_prefix'] == '+') {
 								$option_price += $option_values['price'];
@@ -1037,11 +1053,11 @@ class ControllerProductProduct extends Controller {
 								$option_price -= $option_values['price'];
 							}
 						}
-						
+
 					} elseif ($result['type'] == 'checkbox' && is_array($value)) {
 						foreach ($value as $product_option_value_id) {
 							$option_values = $this->model_catalog_product->getUpdateOptionChcekboxValues($product_option_value_id, $product_option_id);
-							
+
 							if($option_values) {
 								if ($option_values['price_prefix'] == '+') {
 									$option_price += $option_values['price'];
@@ -1054,7 +1070,7 @@ class ControllerProductProduct extends Controller {
 					} elseif ($result['type'] == 'checkbox' && is_array($value)) {
 						foreach ($value as $product_option_value_id) {
 							$option_values = $this->model_catalog_product->getUpdateOptionChcekboxValues($product_option_value_id, $product_option_id);
-							
+
 							if($option_values) {
 								if ($option_values['price_prefix'] == '+') {
 									$option_price += $option_values['price'];
@@ -1066,7 +1082,7 @@ class ControllerProductProduct extends Controller {
 					} elseif ($result['type'] == 'quantity' && is_array($value)) {
 						foreach ($value as $product_option_value_id => $quantity) {
 							$option_values = $this->model_catalog_product->getUpdateOptionChcekboxValues($product_option_value_id, $product_option_id);
-							
+
 							if($option_values) {
 								if ($option_values['price_prefix'] == '+') {
 									$option_price += ($option_values['price'] * $quantity[0]);
@@ -1076,66 +1092,66 @@ class ControllerProductProduct extends Controller {
 							}
 						}
 					}
-				} 
+				}
 			}
 		}
-		
+
 		$price = $product_info['price'];
-		
+
 		$new_price_found = 0;
 		// For Discount Amount
 
 		if (isset($this->request->post['quantity'])) {
 			$discount_amount = $this->model_catalog_product->getDiscountAmountForUpdatePrice($this->request->get['product_id'], $this->request->post['quantity']);
-			
+
 			if ($discount_amount) {
 				$price = $discount_amount;
 			}
 		}
-		
+
 		// check for the special price of product
 		if ($product_info['special']) {
 			$price = $product_info['special'];
 			$new_price_found = 1;
 		}
 
-		// << Related Options / Связанные опции 
+		// << Related Options / Связанные опции
 		$r_option_price = 0;
 		if(isset($this->request->post['option'])){
 			$this->load->model('module/related_options');
 			$ro_settings = $this->config->get('related_options');
 			$ro_for_product = $this->model_module_related_options->get_related_options_sets_by_poids($this->request->get['product_id'], $this->request->post['option'], true);
-	
+
 			if ($ro_for_product && isset($ro_settings['spec_price']) && $ro_settings['spec_price']) {
 				foreach($ro_for_product as $ro_comb){
-					$r_option_price += $ro_comb['price'];   
+					$r_option_price += $ro_comb['price'];
 				}
 			}
-			
+
 			// related options specials
 			if ($ro_for_product
 			//if ($ro_for_products && $ro_for_products[$key]
 			&& isset($ro_settings['spec_price']) && $ro_settings['spec_price']
 			&& isset($ro_settings['spec_price_special']) && $ro_settings['spec_price_special'] ) {
-				
-			
+
+
 				// get first option combination with special
 				foreach ($ro_for_product as $ro_comb) {
 				//foreach ($ro_for_products[$key] as $ro_comb) {
-				
+
 					if ($ro_comb['specials']) {
-						$product_ro_special_query = $this->db->query("SELECT price FROM ".DB_PREFIX."relatedoptions_special 
+						$product_ro_special_query = $this->db->query("SELECT price FROM ".DB_PREFIX."relatedoptions_special
 																	WHERE relatedoptions_id = '" . (int)$ro_comb['relatedoptions_id'] . "'
 																		AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "'
 																	ORDER BY priority ASC, price ASC LIMIT 1");
 						if ($product_ro_special_query->num_rows) {
 							$r_option_price += $product_ro_special_query->row['price'];
-							// << Related Options / Связанные опции 
-					
+							// << Related Options / Связанные опции
+
 							// 		if ( !empty($ro_price_data['price_modificator']) ) {
 							// 			$price = $price + $ro_price_data['price_modificator'];
 							// 		}
-								
+
 							// >> Related Options / Связанные опции
 							break;
 						}
@@ -1154,7 +1170,7 @@ class ControllerProductProduct extends Controller {
 		 if ( !isset($this->request->post['quantity']) ) {
 		 	$this->request->post['quantity'] = 1;
 		 }
-		
+
 		// Total Calculation
 		$unit_price = $this->tax->calculate($total_price, $product_info['tax_class_id'], $this->config->get('config_tax'));
         if ($this->config->get('config_product_decimal_places')) {
@@ -1162,10 +1178,10 @@ class ControllerProductProduct extends Controller {
         } else {
 			$total = $this->currency->format2($unit_price * $this->request->post['quantity'], $this->session->data['currency']);
         }
-		
+
 		// Tax Calculation
 		$unit_tax = $this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax'));
-		
+
         if ($this->config->get('config_product_decimal_places')) {
 			$tax_total = $this->currency->format(((float)$product_info['special'] ? ($product_info['special'] + $option_price) : ($product_info['price'] + $option_price)) * $this->request->post['quantity'], $this->session->data['currency']);
         } else {
@@ -1175,7 +1191,7 @@ class ControllerProductProduct extends Controller {
 		$json['total_price'] = $total;
 		$json['new_price_found'] = $new_price_found;
 		$json['tax_price'] = $tax_total;
-		
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
@@ -1186,7 +1202,7 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->language('product/product');
 
-		// << Related Options / Связанные опции  
+		// << Related Options / Связанные опции
 		$this->load->language('module/related_options');
 		$data['text_ro_clear_options'] 			= $this->language->get('text_ro_clear_options');
 		// >> Related Options / Связанные опции
@@ -1309,7 +1325,7 @@ class ControllerProductProduct extends Controller {
 
 		if($product_option_image_mode == 1) {
 			// for combination option
-			
+
 			//debug($this->request->get['option']);
 			if( isset($this->request->get['prodid']) && isset($this->request->get['option']) && !empty($this->request->get['option'])) {
 				$this->load->model('tool/image');
@@ -1321,11 +1337,11 @@ class ControllerProductProduct extends Controller {
 				$image_additional_width = $this->config->get( $theme . '_image_additional_width');
 				$image_additional_height = $this->config->get( $theme . '_image_additional_height');
 				$this->load->model('catalog/product');
-				
+
 				$results = array();
 				$count_imgs = array();
 				$count_total_imgs = array();
-				
+
 				foreach($this->request->get['option'] as $poid => $pov_id) {
 					$po_imgs = $this->model_catalog_product->getProductOptionImagesByOption($this->request->get['prodid'], $poid, $pov_id);
 
@@ -1352,7 +1368,7 @@ class ControllerProductProduct extends Controller {
 								}
 							}
 						}
-					}				
+					}
 				}
 
 				if(!empty($count_imgs) && !empty($count_total_imgs)) {
@@ -1365,14 +1381,14 @@ class ControllerProductProduct extends Controller {
 						}
 					}
 				}
-				
+
 				$json['images'] = array();
 				foreach ($results as $result) {
 					$json['images'][] = array(
 						'popup' => $this->model_tool_image->resize($result['image'], $image_popup_width, $image_popup_height),
 						'thumb' => $this->model_tool_image->resize($result['image'], $image_thumb_width, $image_thumb_height),
 						'zoom'  => $this->model_tool_image->resize($result['image'], $image_thumb_width*2, $image_thumb_height*2)
-						
+
 					);
 				}
 				$json['additional_images'] = array();
@@ -1382,7 +1398,7 @@ class ControllerProductProduct extends Controller {
 						'thumb' => $this->model_tool_image->resize($result['image'], $image_additional_width, $image_additional_height)
 					);
 				}
-			}	
+			}
 		}
 		else {
 			// for normal option
@@ -1397,7 +1413,7 @@ class ControllerProductProduct extends Controller {
 				$image_additional_height = $this->config->get( $theme . '_image_additional_height');
 				$this->load->model('catalog/product');
 				$results = $this->model_catalog_product->getProductOptionImagesByOption($this->request->get['prodid'], $this->request->get['poid'], $this->request->get['povid']);
-				
+
 				$json['images'] = array();
 				foreach ($results as $result) {
 					$json['images'][] = array(
@@ -1419,7 +1435,7 @@ class ControllerProductProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
-	
+
 	public function ajaxgetprodimages() {
 		$data = array();
 		if(isset($this->request->post['product_id']) && isset($this->request->post['prodimage'])) {
@@ -1428,7 +1444,7 @@ class ControllerProductProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($data));
 	}
-	
+
 	public function getprodimages($product_id, $product_image, $data = array()) {
 		$this->load->model('catalog/product');
 		$this->load->model('tool/image');
@@ -1440,7 +1456,7 @@ class ControllerProductProduct extends Controller {
 		$data['image_thumb_width'] = 'max-width:'.$image_thumb_width.'px;';
 		$image_additional_width = $this->config->get( $theme . '_image_additional_width');
 		$image_additional_height = $this->config->get( $theme . '_image_additional_height');
-		
+
 		$results = $this->model_catalog_product->getProductImages($product_id);
 		$data['images'] = array();
 		if( is_file(DIR_IMAGE . $product_image)) {
@@ -1456,7 +1472,7 @@ class ControllerProductProduct extends Controller {
 				'zoom' => $this->model_tool_image->resize('no_image.png', $image_thumb_width*2, $image_thumb_height*2)
 			);
 		}
-		
+
 		foreach ($results as $result) {
 			$data['images'][] = array(
 				'popup' => $this->model_tool_image->resize($result['image'], $image_popup_width, $image_popup_height),
@@ -1464,7 +1480,7 @@ class ControllerProductProduct extends Controller {
 				'zoom' => $this->model_tool_image->resize($result['image'], $image_thumb_width*2, $image_thumb_height*2)
 			);
 		}
-		
+
 		$data['additional_images'] = array();
 		if( is_file(DIR_IMAGE . $product_image)) {
 			$data['additional_images'][] = array(
@@ -1486,7 +1502,7 @@ class ControllerProductProduct extends Controller {
 		}
 		return $data;
 	}
-	
+
 	public function ajaxgetcolorimages() {
 		$data = array();
 		$this->load->model('catalog/product');
@@ -1499,7 +1515,7 @@ class ControllerProductProduct extends Controller {
 			$data['image'] = $this->model_tool_image->resize('no_image.png', $width, $height);
 			if(!empty($color_image)){
 				$color_image['image'];
-				
+
 				if( is_file(DIR_IMAGE . $color_image['image'])) {
 					$data['image'] = $this->model_tool_image->resize($color_image['image'], $width, $height);
 				}
@@ -1515,13 +1531,13 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput(json_encode($data));
 	}
 	// >> OPTIONS IMAGE
-	
+
 	 // << CHECK OPTION STOCK
 	 public function checkOptionStock() {
 		$json = array();
-		
+
 		$this->load->model('catalog/product');
-		
+
 		$product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
 		$json['has_stock'] = true;
 		$json['main_product_nostock'] = false;
@@ -1534,10 +1550,10 @@ class ControllerProductProduct extends Controller {
 		if(isset($this->request->post['option']) && $this->request->post['option']) {
 			$existing_cart_quantity = $this->cart->checkOptionStock($this->request->get['product_id'],'',$this->request->post['option'],'');
 	        $total_quantity = $selected_qty  + $existing_cart_quantity;
-	    
+
 			foreach($this->request->post['option'] as $product_option_id => $value) {
 				$result = $this->model_catalog_product->getUpdateOptionsList($this->request->get['product_id'], $product_option_id);
-				if($result) {				
+				if($result) {
 					if($result['type'] == 'select' || $result['type'] == 'radio') {
 						$option_values = $this->model_catalog_product->getUpdateOptionValues($value, $product_option_id);
 						if($option_values) {
@@ -1549,11 +1565,11 @@ class ControllerProductProduct extends Controller {
 							}
 							$json['selected_option_array'][] = $value;
 						}
-						
+
 					} elseif ($result['type'] == 'checkbox' && is_array($value)) {
 						foreach ($value as $product_option_value_id) {
 							$option_values = $this->model_catalog_product->getUpdateOptionChcekboxValues($product_option_value_id, $product_option_id);
-							
+
 							if($option_values) {
 								if ($option_values['subtract']) {debug($total_quantity);
 									if($option_values['quantity'] < $total_quantity){
@@ -1565,7 +1581,7 @@ class ControllerProductProduct extends Controller {
 							}
 						}
 					}
-				} 
+				}
 			}
 		}
 		//check if product got deduct stock
@@ -1575,7 +1591,7 @@ class ControllerProductProduct extends Controller {
 				$json['main_product_nostock'] = true;
 			}
 		}
-		
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
@@ -1619,7 +1635,7 @@ class ControllerProductProduct extends Controller {
 				'order_status_id' => $order_status_id,
 				'order_comment' => nl2br($comment),
 				);
-				
+
 				$this->model_tool_pro_email->generate($email_params);
 			}
 		}

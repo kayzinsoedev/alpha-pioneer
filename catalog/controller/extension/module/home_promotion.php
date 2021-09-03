@@ -7,6 +7,7 @@ class ControllerExtensionModuleHomePromotion extends Controller {
         $language_id = $this->config->get('config_language_id');
         $modulename  = 'home_promotion';
 
+        $data['main_title'] = $Modulehelper->get_field ( $oc, $modulename, $language_id, 'main_title');
         $data['row_contents'] = $Modulehelper->get_field ( $oc, $modulename, $language_id, 'row_contents');
 
         $this->document->addStyle('catalog/view/javascript/slick/slick.min.css');

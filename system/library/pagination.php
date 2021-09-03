@@ -52,7 +52,8 @@ class Pagination {
 			// $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
 
 			if ($page - 1 === 1) {
-				$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+				// $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+				$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '"><img src="image/catalog/general/left.png" alt="left-arrow"></a></li>';
 			} else {
 				// $output .= '<li><a href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a></li>';
 			}
@@ -91,7 +92,8 @@ class Pagination {
 		}
 
 		if ($page < $num_pages) {
-			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
+			// $output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
+			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '"><img src="image/catalog/general/right.png" alt="right-arrow"></a></li>';
 			// $output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
 		}
 

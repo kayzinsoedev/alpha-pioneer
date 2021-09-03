@@ -87,6 +87,23 @@ class ControllerProductManufacturer extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 
+		$page = isset($this->request->get['page']) ? $this->request->get['page'] : 1;
+		$limit = 6;
+
+
+
+
+		$pagination = new Pagination();
+    $pagination->total = count($data['manufacturers']);
+    $pagination->page = $page;
+    $pagination->limit = $limit;
+
+    $pagination->url = 'manufacturer&page={page}';
+		$data['pagination'] = $pagination->render();
+
+		$start = ($page - 1) * $limit;
+		$data['manufacturers'] = array_slice($data['manufacturers'], $start, $limit);
+
 		$this->response->setOutput($this->load->view('product/manufacturer_list_'.$brand_listing_layout, $data));
 	}
 

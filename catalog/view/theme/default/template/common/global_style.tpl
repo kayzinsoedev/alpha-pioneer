@@ -307,7 +307,7 @@
         body .btn-primary:not(.btn-mi),
         body .cart-buttons .btn-primary:not(.btn-mi), .swal2-popup .swal2-styled.swal2-confirm,
         body .slider-slideshow-description .slider-slideshow-description-texts .btn.btn-primary {
-            background-color: <?= $config_primary_button_background_color ?> !important;
+            background-color: <?= $config_primary_button_background_color ?>;
             border:  <?= $config_button_border_width ?>px solid <?= $config_primary_button_border_color ?> !important;
             color:<?= $config_primary_button_text_color ?> !important;
         }
@@ -357,7 +357,7 @@
 
         .header-container #enquiry>a .badge, .header-container #cart>a .badge {
             background-color: <?= $config_primary_color ?> !important;
-            color:<?= $config_secondary_color ?> !important;
+            color:<?= $config_secondary_color ?> ;
         }
         @keyframes  pulse1{
             0%{
@@ -393,7 +393,7 @@
     body:not(.cke_editable) h2:not(.swal2-title):not([style]) {
         font-size:calc( (<?= $text_h2_size ?>px /1.5 ) + (((<?= $text_h2_size ?>/3)/19.2) * 1vw))!important;
         text-transform: <?=$config_h2_letter_case;?>!important;
-        color:<?= $text_h2_color ?>!important;
+        color:<?= $text_h2_color ?>;
         font-family: <?= $text_h2_font ?> !important;
     }
 
@@ -561,7 +561,7 @@
         color: <?= $text_category_menu_hover_color ?> !important;
     }
     .text_h2_color, .ctgr-title h3, body:not(.cke_editable) h2:not(.swal2-title):not([style]){
-        color: <?= $text_h2_color ?> !important;
+        color: <?= $text_h2_color ?>;
     }
     .text_h3_color, .cart-header-text,  .text-color-primary  {
         color: <?= $text_h3_color ?> !important;
@@ -1342,7 +1342,7 @@
     <?php } ?>
 
     .product-category #column-left{
-        padding-right:50px;
+        padding-right:70px;
     }
 
     @media screen and (max-width: 1200px) {

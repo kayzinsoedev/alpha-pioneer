@@ -18,7 +18,7 @@ class ControllerExtensionModuleHomePromotion extends Controller {
             'heading_title' => 'Home Promotion',
             'modulename' => 'home_promotion',
                   'fields' => array(
-                      array('type' => 'text', 'label' => 'Title', 'name' => 'title'),
+                      array('type' => 'text', 'label' => 'Title', 'name' => 'main_title'),
                       array('type' => 'repeater', 'label' => 'Home USP', 'name' => 'row_contents',
                             'fields' => array(
                                 array('type' => 'image', 'label' => 'Image', 'name' => 'image'),

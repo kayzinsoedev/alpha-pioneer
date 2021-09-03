@@ -2,12 +2,14 @@
 <div class="container-fluid custom-product-inner-container">
 
 	<?= $content_top; ?>
-
 	<ul class="breadcrumb">
 		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
 			<li><a href="<?= $breadcrumb['href']; ?>"><?= $breadcrumb['text']; ?></a></li>
 		<?php } ?>
 	</ul>
+
+	<h2>Shop</h2>
+
 	<div class="row"><?= $column_left; ?>
 
 	<?php if ($column_left && $column_right) { ?>
