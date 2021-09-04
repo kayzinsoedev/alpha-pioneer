@@ -1431,6 +1431,10 @@ body:not(.cke_editable) h2:not(.swal2-title):not([style])::before{
   body .header-container .header-menu #main-menu>li>a {
       padding-right: 2vw !important;
   }
+  .benefits-container {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width:1366px){
@@ -1480,10 +1484,7 @@ body:not(.cke_editable) h2:not(.swal2-title):not([style])::before{
     font-size: calc(16px + (17 - 12) * (100vw - 320px) / (1920 - 320));
   }
 
-  .benefits-container {
-    width: 90%;
-    margin: 0 auto;
-  }
+
 
   .header-logo-image img{
       max-width: 80%;

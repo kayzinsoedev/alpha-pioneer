@@ -168,11 +168,13 @@ class ControllerExtensionModuleReferralCoupon extends Controller {
            $rc_id = ($querys->row['referral_coupon_id']) ? $querys->row['referral_coupon_id'] : '';
            //===============================================
 
+           // debug($this->config->get('referral_coupon_referrer_sending_reward'));die;
+           // debug($this->customer);die;
 
-          // if ($this->config->get('referral_coupon_referrer_sending_reward')) {
-          //   $description = str_replace('{referee_name}', $referee_name, $this->language->get('text_sending_referral_reward_desc'));
-          //   $this->addReward($this->customer->getId(), 0, $this->config->get('referral_coupon_referrer_sending_reward'), $description);
-          // }
+          if ($this->config->get('referral_coupon_referrer_sending_reward')) {
+            $description = str_replace('{referee_name}', $referee_name, $this->language->get('text_sending_referral_reward_desc'));
+            $this->addReward($this->customer->getId(), 0, $this->config->get('referral_coupon_referrer_sending_reward'), $description);
+          }
 
           if ($this->config->get('referral_coupon_from_email') == 'custom') {
             $from['email'] = $this->config->get('referral_coupon_from_custom_email');
@@ -367,25 +369,25 @@ class ControllerExtensionModuleReferralCoupon extends Controller {
     }
   } //updateOrder end
 
-  // public function addReward($customer_id = 0, $order_id = 0, $reward = 0, $description = '') {
-  //   if (!$customer_id || !$reward) return;
+  public function addReward($customer_id = 0, $order_id = 0, $reward = 0, $description = '') {
+    if (!$customer_id || !$reward) return;
 
-  //   if ($this->config->get('referral_coupon_reward_type') == 'point') {
-  //     $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' AND order_id = '" . (int)$order_id . "' AND order_id != '0'");
-  //     if ($query->num_rows) return;
+    if ($this->config->get('referral_coupon_reward_type') == 'point') {
+      $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' AND order_id = '" . (int)$order_id . "' AND order_id != '0'");
+      if ($query->num_rows) return;
 
-  //     $this->db->query("INSERT INTO " . DB_PREFIX . "customer_reward SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($description) . "', points = '" . (int)$reward . "', date_added = NOW(), referral_reward = '1'");
-  //   } else {
-  //     $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' AND order_id = '" . (int)$order_id . "' AND order_id != '0'");
-  //     if ($query->num_rows) return;
+      $this->db->query("INSERT INTO " . DB_PREFIX . "customer_reward SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($description) . "', points = '" . (int)$reward . "', date_added = NOW(), referral_reward = '1'");
+    } else {
+      $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' AND order_id = '" . (int)$order_id . "' AND order_id != '0'");
+      if ($query->num_rows) return;
 
-  //     $this->db->query("INSERT INTO " . DB_PREFIX . "customer_transaction SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($description) . "', amount = '" . (int)$reward . "', date_added = NOW(), referral_reward = '1'");
-  //   }
+      $this->db->query("INSERT INTO " . DB_PREFIX . "customer_transaction SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', description = '" . $this->db->escape($description) . "', amount = '" . (int)$reward . "', date_added = NOW(), referral_reward = '1'");
+    }
 
-  //   if ($this->config->get('referral_coupon_notify')) {
-  //     $this->notifyReward($customer_id, $reward);
-  //   }
-  // } //addReward end
+    if ($this->config->get('referral_coupon_notify')) {
+      $this->notifyReward($customer_id, $reward);
+    }
+  } //addReward end
 
   public function notifyReward($customer_id = 0, $reward = 0) {
     $from['email'] = $this->config->get('config_email');

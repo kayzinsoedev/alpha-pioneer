@@ -333,7 +333,7 @@ function addAddress() {
 	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][city]" value="" placeholder="<?php echo $entry_city; ?>" id="input-city' + address_row + '" class="form-control" /></div>';
 	html += '  </div>';
 
-	
+
 
 	html += '  <div class="form-group required">';
 	html += '    <label class="col-sm-2 control-label" for="input-country' + address_row + '"><?php echo $entry_country; ?></label>';
@@ -349,7 +349,7 @@ function addAddress() {
 	html += '    <label class="col-sm-2 control-label" for="input-zone' + address_row + '"><?php echo $entry_zone; ?></label>';
 	html += '    <div class="col-sm-10"><select name="address[' + address_row + '][zone_id]" id="input-zone' + address_row + '" class="form-control"><option value=""><?php echo $text_none; ?></option></select></div>';
 	html += '  </div>';
-  
+
 	html += '  <div class="form-group">';
 	html += '    <label class="col-sm-2 control-label"><?php echo $entry_default; ?></label>';
 	html += '    <div class="col-sm-10"><label class="radio"><input type="radio" name="address[' + address_row + '][default]" value="1" /></label></div>';
@@ -635,7 +635,7 @@ $('.birthday').datetimepicker({
     pickTime: false,
     format: 'YYYY-MM-DD',
     maxDate: moment()
-}); 
+});
 
 // Sort the custom fields
 <?php $address_row = 1; ?>

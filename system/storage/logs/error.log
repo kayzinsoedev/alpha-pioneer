@@ -8918,3 +8918,287 @@
 2021-09-04 19:31:11 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
 2021-09-04 19:31:11 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
 2021-09-04 19:31:11 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:36:30 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:36:30 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:36:30 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:36:30 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:37:57 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:37:57 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:37:57 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:37:57 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:38:27 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:38:27 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:38:27 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:38:27 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:43:50 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:43:50 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:43:50 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:43:50 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:43:54 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 119
+2021-09-04 19:43:54 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 123
+2021-09-04 19:43:54 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 127
+2021-09-04 19:43:54 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 131
+2021-09-04 19:43:54 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:43:54 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:43:54 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:43:54 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:44:02 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:44:02 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:44:02 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:44:02 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:44:08 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:44:08 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:44:08 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:44:08 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:49:57 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 19:49:57 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 19:56:56 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 19:56:56 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 19:56:56 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 19:56:56 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 19:56:56 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:56:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:10 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:10 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:10 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:10 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:13 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:13 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:13 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:13 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:57:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:03 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:03 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:03 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:03 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:59 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:59 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:59 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 19:58:59 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:00:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:00:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:00:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:00:49 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:13:20 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:13:20 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:13:20 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:13:20 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:13:21 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:13:27 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:13:27 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:13:27 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:13:27 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:13:54 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:13:54 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:13:54 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:13:54 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:13:55 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:15:15 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:15:15 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:15:15 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:15:15 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:15:16 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:15:30 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:16:26 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:16:26 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:19:57 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:19:57 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:19:57 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:19:57 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:20:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:20:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:20:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:20:04 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:20:39 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:20:39 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:20:39 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:20:39 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:20:57 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:20:57 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:21:58 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:21:58 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:21:58 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:21:58 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:22:13 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:22:14 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:22:47 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:22:47 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:22:47 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:22:47 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:23:03 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:23:03 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:25:52 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:25:52 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:25:52 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:25:52 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:27:01 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:27:01 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:27:01 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:27:01 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:27:17 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:27:17 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:27:17 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:27:17 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:27:30 - PHP Notice:  Undefined index: referral_coupon_id in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 168
+2021-09-04 20:27:43 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:27:43 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:27:43 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:27:43 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:27:56 - PHP Notice:  Undefined index: referral_coupon_id in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 168
+2021-09-04 20:28:14 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:14 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:14 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:14 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:17 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:28:17 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:28:17 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:28:17 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:28:33 - PHP Notice:  Undefined index: referral_coupon_id in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 168
+2021-09-04 20:28:52 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:52 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:52 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:52 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:28:55 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:28:55 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:28:55 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:28:55 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:29:09 - PHP Notice:  Undefined index: referral_coupon_id in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 168
+2021-09-04 20:29:29 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:29:29 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:29:29 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:29:29 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:29:41 - PHP Notice:  Undefined index: referral_coupon_id in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 168
+2021-09-04 20:29:51 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:29:51 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:29:51 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:29:51 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:29:58 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:29:58 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:29:58 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:29:58 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:30:13 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:30:13 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:30:38 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:30:38 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:30:38 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:30:38 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:31:11 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:31:11 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:31:11 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:31:11 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:31:26 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:31:27 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:32:47 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:32:47 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:32:47 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:32:47 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:33:01 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:33:01 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:33:33 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:33:33 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:33:33 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:33:42 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:42 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:42 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:42 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:45 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:33:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:21 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:21 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:21 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:21 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:48 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:56 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:56 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:56 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:36:56 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:37:52 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:37:52 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:37:52 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:37:52 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:37:53 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:37:53 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:39:04 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:39:04 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:39:04 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:39:04 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:39:22 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:39:31 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:39:42 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:39:42 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:39:57 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:39:57 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:39:57 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:39:57 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:40:01 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:40:01 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:40:01 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:40:01 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:40:04 - PHP Notice:  Undefined variable: cagory in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\fcategory.tpl on line 23
+2021-09-04 20:40:04 - PHP Notice:  Undefined variable: cagory in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\fcategory.tpl on line 23
+2021-09-04 20:40:04 - PHP Notice:  Undefined variable: cagory in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\fcategory.tpl on line 23
+2021-09-04 20:40:04 - PHP Notice:  Undefined variable: cagory in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\fcategory.tpl on line 23
+2021-09-04 20:40:04 - PHP Notice:  Undefined variable: cagory in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\fcategory.tpl on line 23
+2021-09-04 20:40:04 - PHP Notice:  Undefined variable: link in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\featured_slick.tpl on line 20
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: link in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\featured_slick.tpl on line 20
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: link in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\extension\module\featured_slick.tpl on line 20
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:40:05 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 119
+2021-09-04 20:40:05 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 123
+2021-09-04 20:40:05 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 127
+2021-09-04 20:40:05 - PHP Notice:  A non well formed numeric value encountered in C:\xampp\htdocs\alpha-pioneer\system\library\template\Twig\Environment.php(403) : eval()'d code on line 131
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:40:05 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:40:15 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:40:15 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:40:15 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:40:15 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:40:40 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:40:40 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:40:40 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:40:40 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:40:53 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:41:00 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:41:31 - PHP Notice:  Undefined variable: theme_default_product_box_border in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 488
+2021-09-04 20:41:31 - PHP Notice:  Undefined variable: text_p_light_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 570
+2021-09-04 20:41:31 - PHP Notice:  Undefined variable: text_p_dark_color in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 573
+2021-09-04 20:41:31 - PHP Notice:  Undefined variable: text_submenu_hover_font in C:\xampp\htdocs\alpha-pioneer\catalog\view\theme\default\template\common\global_style.tpl on line 592
+2021-09-04 20:41:44 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:41:44 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:41:54 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255
+2021-09-04 20:42:16 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\alpha-pioneer\system\library\mail.php on line 176
+2021-09-04 20:42:16 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:42:16 - PHP Notice:  Undefined index: status in C:\xampp\htdocs\alpha-pioneer\catalog\controller\extension\module\referral_coupon.php on line 66
+2021-09-04 20:42:17 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\alpha-pioneer\admin\model\module\related_options.php on line 255

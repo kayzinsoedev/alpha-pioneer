@@ -73,32 +73,32 @@ function addRow(obj) {
   html += '  <td><input type="text" name="referee_email[]" class="form-control referee_email" /></td>';
   html += '  <td><button class="btn btn-default" type="button" onclick="removeRow(this);"><i class="fa fa-minus"></i> <?php echo $lng['button_remove']; ?></button></td>';
   html += '</tr>';
-  
+
   $(obj).parents('table').children('tbody').append(html);
 } //addRow end
 
 function sendReferralCoupon(obj) {
   $(obj).parents('form').find('.alert').remove();
-  
+
   error = 0;
-  
+
   $(obj).parents('table').find('tr.referee').each(function() {
     referee_name = $(this).find('input.referee_name');
     referee_email = $(this).find('input.referee_email');
-    
+
     if (referee_name.val().length < 1 || referee_name.val().length > 64) {
       $(referee_name).after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $lng['error_name']; ?></div>');
       error++;
     }
-    
+
     if (!checkEmailFormat(referee_email.val())) {
       $(referee_email).after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $lng['error_email_format']; ?></div>');
       error++;
     }
   });
-  
+
   if (error) return false;
-  
+
   $.ajax({
     url: 'index.php?route=module/referral_coupon/sendReferral',
     data: $(obj).parents('form').serialize(),
@@ -120,7 +120,7 @@ function sendReferralCoupon(obj) {
 	        return false;
 	      } else {
 	        $(obj).parents('.referral-coupon-form').find('.text-info').html(referee.sending_limit.text);
-	        
+
 	        $(obj).parents('table').find('tr.referee').each(function() {
 	          if ($(this).find('input.referee_email').val() == referee.email) {
 	            if (referee.error.email_existed) {
