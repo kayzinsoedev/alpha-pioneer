@@ -57,6 +57,7 @@
 				<div class="header-top">
 					<div class="search_container relative">
 						<span class="hidden-xs hidden-sm"><?= $search; ?></span>
+
 					</div>
 					<?php if($config_display_account_icon) { ?>
 						<span class="hidden-xs hidden-sm">

@@ -15,7 +15,7 @@ class ControllerCommonSearch extends Controller {
 		$data['display_search'] = false;
 		$data['popup_search'] = $data['searchbar'] = false;
 
-		if($data['config_display_header_search_icon'] != 'none') { 
+		if($data['config_display_header_search_icon'] != 'none') {
 			$data['display_search'] = true;
 			if($data['config_display_header_search_icon'] == 'popup') {
 				$data['popup_search'] = true;
@@ -24,7 +24,7 @@ class ControllerCommonSearch extends Controller {
 			}
 		}
 
-	
+
 
 		return $this->load->view('common/header/search', $data);
 	}

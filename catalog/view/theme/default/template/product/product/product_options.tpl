@@ -24,7 +24,7 @@
               </span>
               <input type="text" data-product-id="<?= $product_id; ?>" name="option[<?= $option['product_option_id']; ?>][<?= $option_value['product_option_value_id']; ?>][]" class="form-control input-number integer text-center" id="input-option<?= $option['product_option_id']; ?>" value="0" <?php if($option_value['subtract'] && $option_value['quantity'] < 1) {echo "disabled"; } ?>>
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default btn-number" data-type="plus" onclick="oincrement($(this).parent().parent())" data-product-id="<?= $product_id; ?>">
+                <button type="button" class="btn btn-default btn-number btn-plus" data-type="plus" onclick="oincrement($(this).parent().parent())" data-product-id="<?= $product_id; ?>">
                   <span class="glyphicon glyphicon-plus"></span>
                 </button>
               </span>
@@ -164,19 +164,18 @@
 
   <div class="custom-add-section">
 
-
     <div class="quantity-wrapper <?= $enquiry || !$not_avail ? '' : 'hidden' ?>">
       <div class="form-group">
           <!-- <label class="control-label" for="input-quantity"><?= $entry_qty; ?></label> -->
           <div class="input-group">
             <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="qty-<?= $product_id; ?>" onclick="descrement($(this).parent().parent())")>
+              <button type="button" class="btn btn-default btn-number btn-minus" data-type="minus" data-field="qty-<?= $product_id; ?>" onclick="descrement($(this).parent().parent())")>
                 <span class="glyphicon glyphicon-minus"></span>
               </button>
             </span>
             <input type="text" name="quantity" class="form-control input-number integer text-center" id="input-quantity" value="<?php if($existing_cart > 0){echo $quantity;}else{echo $minimum;} ?>" >
             <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty-<?= $product_id; ?>" onclick="increment($(this).parent().parent())">
+              <button type="button" class="btn btn-default btn-number btn-plus" data-type="plus" data-field="qty-<?= $product_id; ?>" onclick="increment($(this).parent().parent())">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
             </span>
@@ -209,15 +208,22 @@
         <?php } ?>
 
         <?php if($share_html){ ?>
-          <div class="social-sharing input-group-flex">
+          <div class="normal-social social-sharing input-group-flex">
             <span class="text-uppercase"><?= $text_share; ?>:</span>
             <div><?= $share_html; ?></div>
           </div>
         <?php } ?>
       </div>
 
-
     </div>
+
+
+    <?php if($share_html){ ?>
+      <div class="custom-social social-sharing input-group-flex">
+        <span class="text-uppercase"><?= $text_share; ?>:</span>
+        <div><?= $share_html; ?></div>
+      </div>
+    <?php } ?>
 
 
   </div>

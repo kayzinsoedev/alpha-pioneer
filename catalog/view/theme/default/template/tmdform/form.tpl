@@ -24,13 +24,13 @@
 	<h1><?php echo $formtitle; ?></h1>
     <?php } ?>
 	<?php echo $top_description; ?>
-      
+
 		<form class="form-horizontal">
-			<h2><?php echo $formtitle; ?></h2>	  
+			<h2><?php echo $formtitle; ?></h2>
 			<div id="formbuilder">
 				<div class="custom_formbuilder">
 					<input type="hidden" name="form_id" value="<?php echo $form_id; ?>"/>
-					
+
 					<?php if ($form_fields) { ?>
 					<?php foreach ($form_fields as $optionfield) { ?>
 					<?php if ($optionfield['type'] == 'select') { ?>
@@ -40,16 +40,16 @@
 							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 							</label>
-							<div class="col-sm-12">	
+							<div class="col-sm-12">
 								<div id="input-formfields<?php echo $optionfield['field_id']; ?>">
 								<select name="formfields[<?php echo $optionfield['field_id']; ?>]"  class="form-control">
 									<option value=""><?php echo $text_select; ?></option>
-									<?php foreach ($optionfield['form_field_option'] as $option_value) { ?>	
-									<?php if($formfields[$optionfield['field_id']]==$option_value['name']) { ?>							
+									<?php foreach ($optionfield['form_field_option'] as $option_value) { ?>
+									<?php if($formfields[$optionfield['field_id']]==$option_value['name']) { ?>
 									<option value="<?php echo $option_value['name']; ?>" selected="selected"><?php echo $option_value['name']; ?></option>
-									<?php } else { ?> 
+									<?php } else { ?>
 									<option value="<?php echo $option_value['name']; ?>"><?php echo $option_value['name']; ?></option>
-									
+
 									<?php } }?>
 								</select>
 							</div>
@@ -59,22 +59,22 @@
 					<?php if ($optionfield['type'] == 'radio') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 							<label class="col-sm-12 control-label"><?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
-							<?php echo $optionfield['field_name']; ?>					
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
-							</label>					
+							</label>
 							<div class="col-sm-12">
 							<div id="input-formfields<?php echo $optionfield['field_id']; ?>">
 								<?php foreach ($optionfield['form_field_option'] as $option_value) { ?>
 								<div class="radio">
 									<label>
-										<input type="radio" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="<?php echo $option_value['name']; ?>" />							                    
+										<input type="radio" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="<?php echo $option_value['name']; ?>" />
 										<?php echo $option_value['name']; ?>
-										
+
 									</label>
 								</div>
 								<?php } ?>
-							</div>			
-							</div>			
+							</div>
+							</div>
 						</div>
 					<?php } ?>
 					<?php if ($optionfield['type'] == 'checkbox') { ?>
@@ -89,9 +89,9 @@
 							<?php foreach ($optionfield['form_field_option'] as $option_value) { ?>
 							<div class="checkbox">
 							<label>
-								<input type="checkbox" name="formfields[<?php echo $optionfield['field_id']; ?>][]" value="<?php echo $option_value['name']; ?>" />    
+								<input type="checkbox" name="formfields[<?php echo $optionfield['field_id']; ?>][]" value="<?php echo $option_value['name']; ?>" />
 								<?php echo $option_value['name']; ?>
-							
+
 							</label>
 							</div>
 							<?php } ?>
@@ -102,19 +102,19 @@
 					<?php if ($optionfield['type'] == 'text') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 							<label class="col-sm-12 control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-								<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?> <?php echo $optionfield['field_name']; ?>	
+								<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?> <?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 							</label>
 							<div class="col-sm-12">
-								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />					
+								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
 						</div>
 					<?php } ?>
 					<?php if ($optionfield['type'] == 'textarea') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12 control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-						<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-						<?php echo $optionfield['field_name']; ?>				  
+						<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+						<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 						<div class="col-sm-12">
@@ -122,88 +122,88 @@
 						</div>
 						</div>
 					<?php } ?>
-						
+
 					<?php if ($optionfield['type'] == 'number') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-option<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
-						</div>	
+						</div>
 					<?php } ?>
-						
+
 					<?php if ($optionfield['type'] == 'telephone') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
-						</div>	
-					<?php } ?>	
-						
+						</div>
+					<?php } ?>
+
 					<?php if ($optionfield['type'] == 'email') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
-								
+
 							</div>
-						</div>	
-					<?php } ?>	
+						</div>
+					<?php } ?>
 					<?php if ($optionfield['type'] == 'emaile_exists') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
-						</div>		
-					<?php } ?>	
+						</div>
+					<?php } ?>
 					<?php if ($optionfield['type'] == 'password') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="password" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
-						</div>		
-					<?php } ?>	
+						</div>
+					<?php } ?>
 					<?php if ($optionfield['type'] == 'confirm') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="password" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
-						</div>	
-					<?php } ?>	
+						</div>
+					<?php } ?>
 					<?php if ($optionfield['type'] == 'file') { ?>
-					
+
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="control-label col-sm-12">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 						<div class="col-sm-12">
@@ -215,8 +215,8 @@
 					<?php if ($optionfield['type'] == 'date') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="control-label col-sm-12" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 						<div class="col-sm-12">
@@ -231,8 +231,8 @@
 					<?php if ($optionfield['type'] == 'datetime') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="control-label col-sm-12" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 						<div class="col-sm-12">
@@ -247,8 +247,8 @@
 					<?php if ($optionfield['type'] == 'time') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="control-label col-sm-12" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
@@ -263,11 +263,11 @@
 					<?php if ($optionfield['type'] == 'country') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 							<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-								<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-								<?php echo $optionfield['field_name']; ?>				  
+								<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+								<?php echo $optionfield['field_name']; ?>
 								<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 							</label>
-							<div class="col-sm-12">	
+							<div class="col-sm-12">
 								<select name="formfields[<?php echo $optionfield['field_id']; ?>]" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control country_id">
 									<option value=""><?php echo $text_select; ?></option>
 									<?php foreach ($countries as $country) { ?>
@@ -279,67 +279,68 @@
 									<?php } ?>
 								</select>
 							</div>
-						</div>	
+						</div>
 					<?php } ?>
 					<?php if ($optionfield['type'] == 'zone') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 							<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-								<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-								<?php echo $optionfield['field_name']; ?>				  
+								<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+								<?php echo $optionfield['field_name']; ?>
 								<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 							</label>
-							<div class="col-sm-12">	
+							<div class="col-sm-12">
 							<select name="formfields[<?php echo $optionfield['field_id']; ?>]" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control zone_id">
 							</select>
 							</div>
-						</div>	
-					<?php } ?>	
-						
+						</div>
+					<?php } ?>
+
 					<?php if ($optionfield['type'] == 'address') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
 						</div>
-					<?php } ?>	
+					<?php } ?>
 					<?php if ($optionfield['type'] == 'postcode') { ?>
 						<div class="form-group<?php echo ($optionfield['required'] ? ' required' : ''); ?>">
 						<label class="col-sm-12  control-label" for="input-formfields<?php echo $optionfield['field_id']; ?>">
-							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>	  
-							<?php echo $optionfield['field_name']; ?>				  
+							<?php if(!empty($optionfield['help_text'])) { ?><span data-toggle="tooltip" title="<?php echo $optionfield['help_text']; ?>"> <?php }?>
+							<?php echo $optionfield['field_name']; ?>
 							<?php if(!empty($optionfield['help_text'])) { ?> <i class="fa fa-question-circle" aria-hidden="true"></i> </span><?php } ?>
 						</label>
 							<div class="col-sm-12">
 								<input type="text" name="formfields[<?php echo $optionfield['field_id']; ?>]" value="" placeholder="<?php echo $optionfield['placeholder']; ?>" id="input-formfields<?php echo $optionfield['field_id']; ?>" class="form-control" />
 							</div>
 						</div>
-					<?php } ?>	
-				
 					<?php } ?>
-					<?php } ?>		
+
+					<?php } ?>
+					<?php } ?>
 				</div>
-				<?php if ($captchastatus == 1) { ?>					
-					 <?php echo $captcha; ?>
-					 <div id="g-recaptcha"></div>					
-				<?php }  ?>
-				<button type="button" id="button-formbulider" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_name; ?></button>
-				
-				<!--<div class="form-group">	
+        <div class="contact-btn">
+    				<?php if ($captchastatus == 1) { ?>
+    					 <?php echo $captcha; ?>
+    					 <div id="g-recaptcha"></div>
+    				<?php }  ?>
+    				<button type="button" id="button-formbulider" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_name; ?></button>
+        </div>
+				<!--<div class="form-group">
 					<div class="buttons">
 						<div class="col-sm-6 col-md-6 col-xs-12"></div>
 						<div class="col-sm-3 col-xs-12 col-md-2">
-							<button type="button" id="button-formbulider" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_name; ?></button>				
-						</div>	
+							<button type="button" id="button-formbulider" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_name; ?></button>
+						</div>
 						<div class="col-sm-3 col-xs-12 col-md-2">
 							<?php if($resetbutton==1) {?>
 							<input type="reset" value="<?php echo $resetbutton_name; ?>"  class="btn btn-default btn-lg btn-block"/>
 							<?php } ?>
-						</div>	
+						</div>
 						<div class="col-sm-6 col-md-2 col-xs-12"></div>
 					</div>
 				</div>-->
@@ -349,7 +350,7 @@
       <?php if(empty($informationform)){?>
     <?php echo $column_right; ?></div>
 </div>
-<?php } ?>  
+<?php } ?>
 
 <script type="text/javascript"><!--
 $('#button-formbulider').on('click', function() {
@@ -367,7 +368,7 @@ $('#button-formbulider').on('click', function() {
 		success: function(json) {
 			$('.alert, .text-danger').remove();
 			/* validation class has error */
-			$('.form-group').removeClass('has-error');	
+			$('.form-group').removeClass('has-error');
 			/* validation class has error */
 
 			if (json['error']) {
@@ -381,7 +382,7 @@ $('#button-formbulider').on('click', function() {
 							element.after('<div class="text-danger">' + json['error']['formfields'][i] + '</div>');
 						}
 					}
-                    /* validation class has error */			
+                    /* validation class has error */
 					$('.text-danger').parentsUntil('.form-group').parent().addClass('has-error');
 					/* validation class has error */
 				}
@@ -390,11 +391,11 @@ $('#button-formbulider').on('click', function() {
 				}
 
 			   /* warning code */
-				if (json['warning']) {						
+				if (json['warning']) {
 					//$('.form-horizontal').before('<div class="alert alert-danger col-sm-10"> <i class="fa fa-exclamation-circle"></i> ' + json['warning'] + '<button type="button" class="close" data-dismiss="alert">×</button> </div><div class="clearfix"></div>');
 					//$('html, body').animate({ scrollTop: 0 }, 'slow');
-				}	
-				/* warning code */  
+				}
+				/* warning code */
 			}
 			if (json['success']) {
 				location='<?php echo str_replace('&amp;','&',$producturl)?>';
@@ -482,7 +483,7 @@ $('.country_id').on('change', function() {
 			$('.fa-spin').remove();
 		},
 		success: function(json) {
-			
+
 			html = '<option value=""><?php echo $text_select; ?></option>';
 
 			if (json['zone'] && json['zone'] != '') {
@@ -507,7 +508,7 @@ $('.country_id').on('change', function() {
 	});
 });
 $('select .country_id').trigger('change');
-		
+
 //--></script>
 <style>
 <?php echo $customcss; ?>

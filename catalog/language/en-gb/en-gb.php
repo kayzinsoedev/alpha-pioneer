@@ -22,7 +22,7 @@ $_ = array(
     'text_pagination'       => 'Showing %d to %d of %d (%d Pages)',
     'text_loading'          => 'Loading...',
     'text_no_results'       => 'No results!',
-    'text_share'            => 'Share Now',
+    'text_share'            => 'Share',
 
 // Buttons
     'button_address_add'    => 'Add Address',

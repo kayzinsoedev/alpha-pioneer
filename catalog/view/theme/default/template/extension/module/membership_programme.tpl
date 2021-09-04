@@ -1,7 +1,7 @@
 <div class="membership-section">
     <h1><?=$heading;?></h1>
     <img src="image/<?=$image;?>" alt="membership">
-    <div class="membership-title"><?=$title;?></div>
+    <div class="membership-title main"><?=$title;?></div>
     <div class="membership-desc"><?=$description;?></div>
 </div>
 

@@ -2,40 +2,40 @@
 	<div class="product-block <?= $out_of_stock; ?>">
 		<div class="product-image-block transition relative image-zoom-hover">
 			<?php if($sticker && $sticker['name']){ ?>
-			<a 
-			href="<?= $href; ?>" 
-			title="<?= $name; ?>" 
-			class="sticker absolute <?= $sticker['image'] ? 'sticker-image':''; ?> <?php if($out_of_stock){echo 'out_of_stock';} ?> " 
+			<a
+			href="<?= $href; ?>"
+			title="<?= $name; ?>"
+			class="sticker absolute <?= $sticker['image'] ? 'sticker-image':''; ?> <?php if($out_of_stock){echo 'out_of_stock';} ?> "
 			style="color: <?= $sticker['color']; ?>!important; background-color: <?= $sticker['background-color']; ?>">
 				<?php if($sticker['image']){ ?>
 				    <img src="<?= $sticker['image'] ?>" />
-				<?php } else { 
-				    echo html($sticker['name']); 
+				<?php } else {
+				    echo html($sticker['name']);
 				} ?>
 			</a>
 			<?php } ?>
 			<?php if($show_special_sticker){ ?>
-			<a 
-			href="<?= $href; ?>" 
-			title="<?= $name; ?>" 
-			class="special-sticker absolute <?= $sticker ? 'abjust_sticker' : '' ?>" 
+			<a
+			href="<?= $href; ?>"
+			title="<?= $name; ?>"
+			class="special-sticker absolute <?= $sticker ? 'abjust_sticker' : '' ?>"
 			style="top:<?= $sticker ? '30px' : '0px' ?>; color: #fff!important; background-color: red;">
 				<?= $text_sale; ?>
 			</a>
 			<?php } ?>
-			<a 
-				href="<?= $href; ?>" 
-				title="<?= $name; ?>" 
+			<a
+				href="<?= $href; ?>"
+				title="<?= $name; ?>"
 				class="product-image image-container relative" >
-				<img 
-					src="<?= $thumb; ?>" 
-					alt="<?= $name; ?>" 
+				<img
+					src="<?= $thumb; ?>"
+					alt="<?= $name; ?>"
 					title="<?= $name; ?>"
 					class="img-responsive img1" />
 				<?php if($thumb2 && $hover_image_change) { ?>
-					<img 
-						src="<?= $thumb2; ?>" 
-						alt="<?= $name; ?>" 
+					<img
+						src="<?= $thumb2; ?>"
+						alt="<?= $name; ?>"
 						title="<?= $name; ?>"
 						class="img-responsive img2" style="display: none"/>
 				<?php } ?>
@@ -55,17 +55,18 @@
 						<?php } ?>
 						>
 						<i class="fa fa-shopping-cart"></i>
+						Add to cart
 					</button>
 				<?php } else { ?>
-					
+
 					<?php if(!$enquiry){ ?>
 						<?php if(!$not_avail) { ?>
-							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>"><?= $button_cart; ?></button>
+							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>"><span class="cart-words"><?= $button_cart; ?></span></button>
 						<?php }else{ ?>
-							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" disabled data-product-id="<?= $product_id; ?>">Out of stock</button>
+							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" disabled data-product-id="<?= $product_id; ?>"><span class="cart-words">Out of stock</span></button>
 						<?php } ?>
 					<?php }else{ ?>
-						<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-enquiry btn-enquiry-<?= $product_id; ?>"  data-product-id="<?= $product_id; ?>"><?= $button_enquiry; ?></button>
+						<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-enquiry btn-enquiry-<?= $product_id; ?>"  data-product-id="<?= $product_id; ?>"><span class="cart-words"><?= $button_enquiry; ?></span></button>
 					<?php } ?>
 				<?php } ?>
 				<!--<button type="button" onclick="wishlist.add('<?= $product_id; ?>');" class="btn wishlist-btn btn-default product_wishlist_<?= $product_id; ?>">
@@ -76,7 +77,7 @@
 				</button>-->
 			</div>
 
-				
+
 			<?php if($special && $special_end != "0000-00-00"){ ?>
 				<div class="product_countdown_box">
 					<div class="countdown_day<?= $product_id; ?>"></div>
@@ -116,7 +117,7 @@
 					$(".countdown_second<?= $product_id; ?>").html(seconds+"<div>Secs</div>");
 		//                          $(".countdown<?= $product_id; ?>").html("<i></i>"+hours + " : " + minutes + " : " + seconds);
 
-					// If the count down is over, write some text 
+					// If the count down is over, write some text
 					if (distance < 0) {
 						clearInterval(x);
 						$(".countdown<?= $product_id; ?>").html("EXPIRED");
@@ -140,7 +141,7 @@
 			<div class="product-name">
 				<a href="<?= $href; ?>"><?= $name; ?></a>
 			</div>
-		
+
 			<?php /* product option in product component */ ?>
 			<div class="product-inputs">
 				<?php if ($options && count($options) == 1) { ?>
@@ -151,9 +152,9 @@
 									<?php foreach ($option['product_option_value'] as $option_value) { ?>
 										<label class="control-label" for="input-option<?= $option['product_option_id']; ?>"><?= $option_value['name']; ?><?php if ($option_value['price']) { ?><?= " (".$option_value['price_prefix']." ".$option_value['price'].")"; } ?></label>
 										<div class="input-group">
-											<span class="input-group-btn"> 
+											<span class="input-group-btn">
 												<button type="button" class="btn btn-default btn-number" data-type="minus" onclick="odescrement($(this).parent().parent())" data-product-id="<?= $product_id; ?>">
-													<span class="glyphicon glyphicon-minus"></span> 
+													<span class="glyphicon glyphicon-minus"></span>
 												</button>
 											</span>
 											<input type="text" data-product-id="<?= $product_id; ?>" name="option[<?= $option['product_option_id']; ?>][<?= $option_value['product_option_value_id']; ?>][]" class="form-control input-number integer text-center" id="input-option<?= $option['product_option_id']; ?>" value="0" <?php if($option_value['subtract'] && $option_value['quantity'] < 1) {echo "disabled"; } ?>>
@@ -190,9 +191,9 @@
 									<label class="<?php if ($option_value['image']) { ?>option_image_hover<?php } ?>">
 										<input type="radio" <?php if ($option_value['image']) { ?>class="hide"<?php } ?> name="option[<?= $option['product_option_id']; ?>]" value="<?= $option_value['product_option_value_id']; ?>" data-product-id="<?= $product_id; ?>" />
 										<?php if ($option_value['image']) { ?>
-											<img src="<?= $option_value['image']; ?>" alt="<?= $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
+											<img src="<?= $option_value['image']; ?>" alt="<?= $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
 										<?php } ?>
-										<div class="<?php if ($option_value['image']) { ?>option_name_hover<?php } ?>">               
+										<div class="<?php if ($option_value['image']) { ?>option_name_hover<?php } ?>">
 											<?= $option_value['name']; ?>
 											<?php if ($option_value['price']) { ?>
 											(<?= $option_value['price_prefix']; ?><?= $option_value['price']; ?>)
@@ -213,9 +214,9 @@
 										<label class="<?php if ($option_value['image']) { ?>option_image_hover<?php } ?>">
 											<input type="checkbox" <?php if ($option_value['image']) { ?>class="hide"<?php } ?> name="option[<?= $option['product_option_id']; ?>][]" value="<?= $option_value['product_option_value_id']; ?>" data-product-id="<?= $product_id; ?>" />
 											<?php if ($option_value['image']) { ?>
-											<img src="<?= $option_value['image']; ?>" alt="<?= $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
+											<img src="<?= $option_value['image']; ?>" alt="<?= $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
 											<?php } ?>
-											<div class="<?php if ($option_value['image']) { ?>option_name_hover<?php } ?>">     
+											<div class="<?php if ($option_value['image']) { ?>option_name_hover<?php } ?>">
 												<?= $option_value['name']; ?>
 												<?php if ($option_value['price']) { ?>
 												(<?= $option_value['price_prefix']; ?><?= $option_value['price']; ?>)
@@ -283,9 +284,9 @@
 				<div class="form-group hide">
 					<label class="control-label hide"><?= $entry_qty; ?></label>
 					<div class="input-group">
-					<span class="input-group-btn"> 
+					<span class="input-group-btn">
 						<button type="button" class="btn btn-default btn-number" data-type="minus" data-field="qty-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>" onclick="descrement($(this).parent().parent())")>
-							<span class="glyphicon glyphicon-minus"></span> 
+							<span class="glyphicon glyphicon-minus"></span>
 						</button>
 					</span>
 					<input type="text" name="quantity" class="form-control input-number integer text-center" id="input-quantity-<?= $product_id; ?>" value="<?= $minimum; ?>" data-product-id="<?= $product_id; ?>" >
@@ -324,12 +325,12 @@
 					<input type="hidden" name="product_id" value="<?=$product_id?>">
 					<?php if(!$enquiry){ ?>
 						<?php if(!$not_avail) { ?>
-							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>"><?= $button_cart; ?></button>
+							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>"><span class="cart-words"><?= $button_cart; ?></span></button>
 						<?php }else{ ?>
-							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" disabled data-product-id="<?= $product_id; ?>">Out of stock</button>
+							<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-cart btn-cart-<?= $product_id; ?>" disabled data-product-id="<?= $product_id; ?>"><span class="cart-words">Out of stock</span></button>
 						<?php } ?>
 					<?php }else{ ?>
-						<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-enquiry btn-enquiry-<?= $product_id; ?>"  data-product-id="<?= $product_id; ?>"><?= $button_enquiry; ?></button>
+						<button type="button" data-loading-text="<?= $text_loading; ?>" class="btn btn-primary btn-enquiry btn-enquiry-<?= $product_id; ?>"  data-product-id="<?= $product_id; ?>"><span class="cart-words"><?= $button_enquiry; ?></span></button>
 					<?php } ?>
 				</div>
 			</div>
@@ -351,7 +352,3 @@
 		<?php }*/ ?>
 	</div>
 </div>
-
-
-
-

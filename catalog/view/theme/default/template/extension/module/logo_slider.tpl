@@ -29,13 +29,13 @@
             {
               breakpoint: 1401,
               settings: {
-                slidesToShow: 5,
+                slidesToShow: 3,
               }
             },
             {
               breakpoint: 1201,
               settings: {
-                slidesToShow: 4,
+                slidesToShow: 3,
               }
             },
             {
@@ -53,7 +53,7 @@
             {
               breakpoint: 541,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 arrows: false,
                 autoplay: true,
                 autoplaySpeed: 5000
@@ -62,7 +62,7 @@
             {
               breakpoint: 415,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 arrows: false,
                 autoplay: true,
                 autoplaySpeed: 5000
@@ -71,7 +71,7 @@
             {
               breakpoint: 376,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 arrows: false,
                 autoplay: true,
                 autoplaySpeed: 5000
