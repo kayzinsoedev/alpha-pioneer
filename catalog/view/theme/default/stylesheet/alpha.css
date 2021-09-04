@@ -64,10 +64,15 @@ h2{
   display: none;
 }
 
-.works-main-container,
-.membership-btn-section
+/* .works-main-container,
+.membership-btn-section, */
+.membership-sub-main
 {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
+    background-image: url('../../../../../image/catalog/membership/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .membership-title,
@@ -257,10 +262,18 @@ body.product-product .product-model{
     width: 100%;
 }
 
- #ToTop{
-  background: transparent !important;
-  box-shadow:none;
-  left: 0;
+
+#ToTop{
+  display: none !important;
+}
+.section-space.home_promotion #ToTop{
+  display: block !important;
+}
+
+.section-space.home_promotion #ToTop{
+    background: transparent !important;
+    box-shadow:none;
+    left: 0;
     right: 0;
     position: relative;
     text-align: center;
@@ -269,7 +282,7 @@ body.product-product .product-model{
 }
 
 
-#ToTop:before{
+.section-space.home_promotion #ToTop:before{
   color: #fff !important;
   text-shadow: none !important;
 }

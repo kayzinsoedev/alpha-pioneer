@@ -5,6 +5,8 @@
     <div class="membership-desc"><?=$description;?></div>
 </div>
 
+<div class="membership-sub-main">
+
 <div class="works-main-container">
 <div class="membership-title"><?=$works_title;?></div>
       <div class="works-container">
@@ -39,4 +41,6 @@
 
 <div class="membership-btn-section">
     <a href="<?=$membership_link;?>" class="membership-btn"><?=$membership_btn;?></a>
+</div>
+
 </div>
