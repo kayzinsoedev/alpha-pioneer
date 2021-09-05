@@ -173,7 +173,8 @@ class ControllerExtensionModuleReferralCoupon extends Controller {
 
           if ($this->config->get('referral_coupon_referrer_sending_reward')) {
             $description = str_replace('{referee_name}', $referee_name, $this->language->get('text_sending_referral_reward_desc'));
-            $this->addReward($this->customer->getId(), 0, $this->config->get('referral_coupon_referrer_sending_reward'), $description);
+            // $this->addReward($this->customer->getId(), 0, $this->config->get('referral_coupon_referrer_sending_reward'), $description);
+            $this->addReward($this->customer->getId(), 0, 50, $description);
           }
 
           if ($this->config->get('referral_coupon_from_email') == 'custom') {
@@ -369,7 +370,7 @@ class ControllerExtensionModuleReferralCoupon extends Controller {
     }
   } //updateOrder end
 
-  public function addReward($customer_id = 0, $order_id = 0, $reward = 0, $description = '') {
+  public function addReward($customer_id = 0, $order_id = 0, $reward = 50, $description = '') {
     if (!$customer_id || !$reward) return;
 
     if ($this->config->get('referral_coupon_reward_type') == 'point') {
