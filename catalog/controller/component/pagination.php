@@ -33,7 +33,7 @@
             $data['pagination'] = $pagination->render();
 
             $data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($total - $limit)) ? $total : ((($page - 1) * $limit) + $limit), $total, ceil($total / $limit));
-
+            
             return $data;
         }
     }

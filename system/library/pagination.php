@@ -18,8 +18,10 @@ class Pagination {
 	public $url = '';
 	public $text_first = '|&lt;';
 	public $text_last = '&gt;|';
-	public $text_next = '&gt;';
-	public $text_prev = '&lt;';
+	// public $text_next = '&gt;';
+	// public $text_prev = '&lt;';
+  public $text_next  = '<img src="image/catalog/general/right.png" alt="right-arrow">';
+	public $text_prev  = '<img src="image/catalog/general/left.png" alt="left-arrow">';
 
 	/**
      *
@@ -52,8 +54,8 @@ class Pagination {
 			// $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
 
 			if ($page - 1 === 1) {
-				// $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
-				$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '"><img src="image/catalog/general/left.png" alt="left-arrow"></a></li>';
+				$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+
 			} else {
 				// $output .= '<li><a href="' . str_replace('{page}', $page - 1, $this->url) . '">' . $this->text_prev . '</a></li>';
 			}
@@ -81,19 +83,24 @@ class Pagination {
 			for ($i = $start; $i <= $end; $i++) {
 				if ($page == $i) {
 					$output .= '<li class="active"><span>' . $i . '</span></li>';
-				} else {
+				}
+				if($i == $end){ //else {
 					if ($i === 1) {
+						// $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $i . '</a></li>';
 						$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}', 'page={page}'), '', $this->url) . '">' . $i . '</a></li>';
 					} else {
+						// $output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
+						$output .= "<li> <span class='separator'> / </span> </li>";
 						$output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
 					}
 				}
+
+
 			}
 		}
 
 		if ($page < $num_pages) {
-			// $output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
-			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '"><img src="image/catalog/general/right.png" alt="right-arrow"></a></li>';
+			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
 			// $output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
 		}
 

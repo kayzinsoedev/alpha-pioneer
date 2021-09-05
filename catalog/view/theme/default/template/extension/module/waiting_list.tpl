@@ -7,8 +7,13 @@
         </div>
         <?php } ?>
         <div class="flex-group flex-wrap flex-just-cont-center">
-            <input name="email" placeholder="<?= $entry_email; ?>" value="<?= $email; ?>" class="pd-5 waiting-list-text" />
-            <button id="waiting_list_submit" type="button" class="btn btn-primary" ></button>
+            <div class="custom-waiting-list-div">
+                <input name="email" placeholder="<?= $entry_email; ?>" value="<?= $email; ?>" class="pd-5 waiting-list-text" />
+                <!-- <button id="waiting_list_submit" type="button" class="btn btn-primary" ></button> -->
+                <div class="text-center text-sm-right custom-waiting-list-btn">
+                   <button id="waiting_list_submit" type="button" class="btn btn-primary" ></button>
+                </div>
+            </div>
         </div>
     </div>
     <input type="hidden" name="product_id" value="<?= $product_id; ?>"/>
