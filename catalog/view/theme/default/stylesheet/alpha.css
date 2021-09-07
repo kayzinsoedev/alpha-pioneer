@@ -1471,6 +1471,18 @@ body:not(.cke_editable) h2:not(.swal2-title):not([style])::before{
 #waiting_list_submit{
   transform: translateX(-40px);
 }
+
+
+body.product-product .product-image-main-container .fa.fa-chevron-right,
+body.product-product .product-image-main-container .fa.fa-chevron-left
+{
+    display: none;
+}
+
+body.product-product .product-image-additional-container .slick-slide img {
+    border: 1px solid #ebebeb !important;
+}
+
 /*Responsive */
 
 @media screen and (max-width:1536px) and (min-width: 1366px){
