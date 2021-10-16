@@ -30,7 +30,6 @@ class ControllerExtensionModuleHomePromotion extends Controller {
                             )
                       ),
 
-
                   ),
             );
 

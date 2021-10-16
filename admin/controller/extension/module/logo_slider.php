@@ -9,6 +9,7 @@ class ControllerExtensionModuleLogoSlider extends Controller {
             'modulename' => 'logo_slider',
             'fields' => array(
                 array('type' => 'text',  'label' => 'Main Title', 'name' => 'main_title'),
+                
                 array('type' => 'repeater', 'label' => 'Items', 'name' => 'items',
                     'fields' => array(
                         array('type' => 'image', 'label' => 'Image', 'name' => 'image'),

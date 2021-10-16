@@ -1,7 +1,7 @@
 <?php
 class ControllerExtensionModuleSlideshow extends Controller {
 	public function index($setting) {
-		static $module = 0;		
+		static $module = 0;
 
 		$this->load->model('design/banner');
 		$this->load->model('tool/image');
@@ -38,14 +38,14 @@ class ControllerExtensionModuleSlideshow extends Controller {
 				if(trim($result['description']) != ''){
 					$spliter = "\n";
 					$result['description'] = explode($spliter, $result['description']);
-					
+
 					foreach($result['description'] as $index => &$each){
 						$each = '<span class="slideshow-text-' . $index . '">' . $each . '</span>';
 					}
 
 					$result['description'] = implode($spliter, $result['description']);
 				}
-				
+
 				if(!is_file(DIR_IMAGE . $result['mobile_image'])){
 					$result['mobile_image'] = $result['image'];
 				}
@@ -58,12 +58,12 @@ class ControllerExtensionModuleSlideshow extends Controller {
 					'theme' 		=> $result['color_theme'],
 					'mobile_theme' 	=> 'mobile_' . $result['mobile_color_theme'],
 					'image' 		=> $this->model_tool_image->resize(
-										$result['image'], 
-										$setting['width'], 
+										$result['image'],
+										$setting['width'],
 										$setting['height'], 'a'),
 					'mobile_image' 	=> $this->model_tool_image->resize(
-										$result['mobile_image'], 
-										$setting['mobile_width'], 
+										$result['mobile_image'],
+										$setting['mobile_width'],
 										$setting['mobile_height'], 'h')
 				);
 			}

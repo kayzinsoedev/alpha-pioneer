@@ -156,11 +156,11 @@
               <td class="text-left"><?php echo $column_product; ?></td>
               <td class="text-left"><?php echo $column_model; ?></td>
               <?php
-              // << Related Options / Связанные опции 
+              // << Related Options / Связанные опции
                 if (isset($ro_installed) && $ro_installed && isset($ro_fields)) {
-                
+
                   //$ro_fields = array('sku', 'upc', 'location');
-                
+
                   // array contains only fields enabled on the module settings page
                   foreach ($ro_fields as $ro_field) {
                     ?>
@@ -168,7 +168,7 @@
                     <?php
                   }
                 }
-              // >> Related Options / Связанные опции 
+              // >> Related Options / Связанные опции
               ?>
               <td class="text-right"><?php echo $column_quantity; ?></td>
               <td class="text-right"><?php echo $column_price; ?></td>
@@ -189,9 +189,9 @@
                 <?php } ?></td>
               <td class="text-left"><?php echo $product['model']; ?></td>
               <?php
-              // << Related Options / Связанные опции 
+              // << Related Options / Связанные опции
                 if (isset($ro_installed) && $ro_installed && isset($ro_fields)) {
-                
+
                   // array contains only fields enabled on the module settings page
                   foreach ($ro_fields as $ro_field) {
                     ?>
@@ -199,7 +199,7 @@
                     <?php
                   }
                 }
-              // >> Related Options / Связанные опции 
+              // >> Related Options / Связанные опции
               ?>
               <td class="text-right"><?php echo $product['quantity']; ?></td>
               <td class="text-right"><?php echo $product['price']; ?></td>
@@ -221,7 +221,7 @@
               <!-- << Related Options / Связанные опции  -->
               <td colspan="<?php echo (4+(isset($ro_fields)? count($ro_fields) : 0 ) ); ?>" class="text-right"><?php echo $total['title']; ?>:</td>
               <!-- >> Related Options / Связанные опции  -->
-              
+
               <td class="text-right"><?php echo $total['text']; ?></td>
             </tr>
             <?php } ?>
@@ -702,6 +702,6 @@ $(document).ready(function() {
 $('select[name="order_status_id"]').change(function(){
 	changeStatus();
 });
-//--></script> 
+//--></script>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

@@ -31,7 +31,7 @@ class ControllerSaleOrder extends Controller {
 
 		$this->getForm();
 	}
-	
+
 	public function delete() {
 		$this->load->language('sale/order');
 
@@ -51,15 +51,15 @@ class ControllerSaleOrder extends Controller {
 			if (isset($this->request->get['filter_order_id'])) {
 				$url .= '&filter_order_id=' . $this->request->get['filter_order_id'];
 			}
-	
+
 			if (isset($this->request->get['filter_customer'])) {
 				$url .= '&filter_customer=' . urlencode(html_entity_decode($this->request->get['filter_customer'], ENT_QUOTES, 'UTF-8'));
 			}
-	
+
 			if (isset($this->request->get['filter_order_status'])) {
 				$url .= '&filter_order_status=' . $this->request->get['filter_order_status'];
 			}
-	
+
 			if (isset($this->request->get['filter_total'])) {
 				$url .= '&filter_total=' . $this->request->get['filter_total'];
 			}
@@ -71,11 +71,11 @@ class ControllerSaleOrder extends Controller {
 			if (isset($this->request->get['filter_delivery_time'])) {
 				$url .= '&filter_delivery_time=' . $this->request->get['filter_delivery_time'];
 			}
-	
+
 			if (isset($this->request->get['filter_date_added'])) {
 				$url .= '&filter_date_added=' . $this->request->get['filter_date_added'];
 			}
-	
+
 			if (isset($this->request->get['filter_date_modified'])) {
 				$url .= '&filter_date_modified=' . $this->request->get['filter_date_modified'];
 			}
@@ -85,7 +85,7 @@ class ControllerSaleOrder extends Controller {
 
 		$this->getList();
 	}
-	
+
 	protected function getList() {
 		if (isset($this->request->get['filter_order_id'])) {
 			$filter_order_id = $this->request->get['filter_order_id'];
@@ -318,7 +318,7 @@ class ControllerSaleOrder extends Controller {
 		} else {
 			$data['success'] = '';
 		}
-		
+
 		if (isset($this->request->post['selected'])) {
 			$data['selected'] = (array)$this->request->post['selected'];
 		} else {
@@ -512,23 +512,23 @@ class ControllerSaleOrder extends Controller {
 		$data['column_product'] = $this->language->get('column_product');
 		$data['column_model'] = $this->language->get('column_model');
 
-		// << Related Options / Связанные опции 
-			
+		// << Related Options / Связанные опции
+
 			$data['column_sku'] = $this->language->get('entry_sku');
 			$data['column_upc'] = $this->language->get('entry_upc');
 			$data['column_ean'] = $this->language->get('entry_ean');
 			$data['column_location'] = $this->language->get('entry_location');
 
 			$ro_settings = $this->config->get('related_options');
-			
+
 			if ( !$this->model_module_related_options ) {
 				$this->load->model('module/related_options');
 			}
-			
+
 			$data['ro_installed'] = $this->model_module_related_options->installed();
-			
+
 			if ($data['ro_installed'] && $ro_settings)  {
-			
+
 				$data['ro_fields'] = array();
 				$ro_fields = array('sku', 'upc', 'ean', 'location');
 				foreach ($ro_fields as $ro_field) {
@@ -537,8 +537,8 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 			}
-		
-		// >> Related Options / Связанные опции 
+
+		// >> Related Options / Связанные опции
 		$data['column_quantity'] = $this->language->get('column_quantity');
 		$data['column_price'] = $this->language->get('column_price');
 		$data['column_total'] = $this->language->get('column_total');
@@ -677,7 +677,7 @@ class ControllerSaleOrder extends Controller {
 			$data['shipping_custom_field'] = $order_info['shipping_custom_field'];
 			$data['shipping_method'] = $order_info['shipping_method'];
 			$data['shipping_code'] = $order_info['shipping_code'];
-			
+
 			$data['delivery_date'] = $order_info['delivery_date'];
 			$data['delivery_time'] = $order_info['delivery_time'];
 
@@ -729,7 +729,7 @@ class ControllerSaleOrder extends Controller {
 			$data['order_id'] = 0;
 			$data['store_id'] = 0;
 			$data['store_url'] = $this->request->server['HTTPS'] ? HTTPS_CATALOG : HTTP_CATALOG;
-			
+
 			$data['customer'] = '';
 			$data['customer_id'] = '';
 			$data['customer_group_id'] = $this->config->get('config_customer_group_id');
@@ -856,13 +856,13 @@ class ControllerSaleOrder extends Controller {
 
 		// API login
 		$data['catalog'] = $this->request->server['HTTPS'] ? HTTPS_CATALOG : HTTP_CATALOG;
-		
+
 		$this->load->model('user/api');
 
 		$api_info = $this->model_user_api->getApi($this->config->get('config_api_id'));
 
 		if ($api_info) {
-			
+
 			$data['api_id'] = $api_info['api_id'];
 			$data['api_key'] = $api_info['key'];
 			$data['api_ip'] = $this->request->server['REMOTE_ADDR'];
@@ -875,7 +875,7 @@ class ControllerSaleOrder extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
-		
+
 		$this->response->setOutput($this->load->view('sale/order_form', $data));
 	}
 
@@ -891,7 +891,7 @@ class ControllerSaleOrder extends Controller {
 
 		$order_info = $this->model_sale_order->getOrder($order_id);
 
-		if ($order_info) { 
+		if ($order_info) {
 			$this->load->language('sale/order');
 
 			$this->document->setTitle($this->language->get('heading_title'));
@@ -936,23 +936,23 @@ class ControllerSaleOrder extends Controller {
 			$data['column_product'] = $this->language->get('column_product');
 			$data['column_model'] = $this->language->get('column_model');
 
-			// << Related Options / Связанные опции 
-			
+			// << Related Options / Связанные опции
+
 				$data['column_sku'] = $this->language->get('entry_sku');
 				$data['column_upc'] = $this->language->get('entry_upc');
 				$data['column_ean'] = $this->language->get('entry_ean');
 				$data['column_location'] = $this->language->get('entry_location');
 
 				$ro_settings = $this->config->get('related_options');
-				
+
 				if ( !$this->model_module_related_options ) {
 					$this->load->model('module/related_options');
 				}
-				
+
 				$data['ro_installed'] = $this->model_module_related_options->installed();
-				
+
 				if ($data['ro_installed'] && $ro_settings)  {
-				
+
 					$data['ro_fields'] = array();
 					$ro_fields = array('sku', 'upc', 'ean', 'location');
 					foreach ($ro_fields as $ro_field) {
@@ -961,8 +961,8 @@ class ControllerSaleOrder extends Controller {
 						}
 					}
 				}
-				
-			// >> Related Options / Связанные опции 
+
+			// >> Related Options / Связанные опции
 			$data['column_quantity'] = $this->language->get('column_quantity');
 			$data['column_price'] = $this->language->get('column_price');
 			$data['column_total'] = $this->language->get('column_total');
@@ -1058,7 +1058,7 @@ class ControllerSaleOrder extends Controller {
 
 			$data['store_id'] = $order_info['store_id'];
 			$data['store_name'] = $order_info['store_name'];
-			
+
 			if ($order_info['store_id'] == 0) {
 				$data['store_url'] = $this->request->server['HTTPS'] ? HTTPS_CATALOG : HTTP_CATALOG;
 			} else {
@@ -1508,10 +1508,10 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 			}
-			
+
 			// The URL we send API requests to
 			$data['catalog'] = $this->request->server['HTTPS'] ? HTTPS_CATALOG : HTTP_CATALOG;
-			
+
 			// API login
 			$this->load->model('user/api');
 
@@ -1536,7 +1536,7 @@ class ControllerSaleOrder extends Controller {
 			return new Action('error/not_found');
 		}
 	}
-	
+
 	protected function validate() {
 		if (!$this->user->hasPermission('modify', 'sale/order')) {
 			$this->error['warning'] = $this->language->get('error_permission');
@@ -1544,7 +1544,7 @@ class ControllerSaleOrder extends Controller {
 
 		return !$this->error;
 	}
-	
+
 	public function createInvoiceNo() {
 		$this->load->language('sale/order');
 
@@ -1631,13 +1631,13 @@ class ControllerSaleOrder extends Controller {
 				$this->load->model('customer/customer');
 
 				// $this->model_customer_customer->deleteReward($order_id);
-				
+
 				if (isset($this->request->get['customer_reward_id'])) {
 					$customer_reward_id = $this->request->get['customer_reward_id'];
 				} else {
 					$customer_reward_id = 0;
 				}
-				
+
 				$this->model_customer_customer->deleteReward($customer_reward_id);
 			// }
 
@@ -1792,24 +1792,24 @@ class ControllerSaleOrder extends Controller {
 
 		$data['column_product'] = $this->language->get('column_product');
 		$data['column_model'] = $this->language->get('column_model');
-		
-		// << Related Options / Связанные опции 
-		
+
+		// << Related Options / Связанные опции
+
 			$data['column_sku'] = $this->language->get('entry_sku');
 			$data['column_upc'] = $this->language->get('entry_upc');
 			$data['column_ean'] = $this->language->get('entry_ean');
 			$data['column_location'] = $this->language->get('entry_location');
 
 			$ro_settings = $this->config->get('related_options');
-			
+
 			if ( !$this->model_module_related_options ) {
 				$this->load->model('module/related_options');
 			}
-			
+
 			$data['ro_installed'] = $this->model_module_related_options->installed();
-			
+
 			if ($data['ro_installed'] && $ro_settings)  {
-			
+
 				$data['ro_fields'] = array();
 				$ro_fields = array('sku', 'upc', 'ean', 'location');
 				foreach ($ro_fields as $ro_field) {
@@ -1818,8 +1818,8 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 			}
-			
-		// >> Related Options / Связанные опции 
+
+		// >> Related Options / Связанные опции
 		$data['column_quantity'] = $this->language->get('column_quantity');
 		$data['column_price'] = $this->language->get('column_price');
 		$data['column_total'] = $this->language->get('column_total');
@@ -2008,7 +2008,7 @@ class ControllerSaleOrder extends Controller {
 						'text'  => $text,
 					);
 				}
-				
+
 				$fulfillment_title = $this->language->get('text_delivery');
 				if($order_info['shipping_method'] == 'pickup.pickup'){
 					$fulfillment_title = $this->language->get('text_pickup_date');
@@ -2089,24 +2089,24 @@ class ControllerSaleOrder extends Controller {
 		$data['column_product'] = $this->language->get('column_product');
 		$data['column_weight'] = $this->language->get('column_weight');
 		$data['column_model'] = $this->language->get('column_model');
-		
-		// << Related Options / Связанные опции 
-		
+
+		// << Related Options / Связанные опции
+
 			$data['column_sku'] = $this->language->get('entry_sku');
 			$data['column_upc'] = $this->language->get('entry_upc');
 			$data['column_ean'] = $this->language->get('entry_ean');
 			$data['column_location'] = $this->language->get('column_location');
-			
+
 			$ro_settings = $this->config->get('related_options');
-			
+
 			if ( !$this->model_module_related_options ) {
 				$this->load->model('module/related_options');
 			}
-			
+
 			$data['ro_installed'] = $this->model_module_related_options->installed();
-			
+
 			if ($data['ro_installed'] && $ro_settings)  {
-			
+
 				$data['ro_fields'] = array();
 				$ro_fields = array('sku', 'upc', 'ean', 'location');
 				foreach ($ro_fields as $ro_field) {
@@ -2115,8 +2115,8 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 			}
-			
-		// >> Related Options / Связанные опции 
+
+		// >> Related Options / Связанные опции
 		$data['column_quantity'] = $this->language->get('column_quantity');
 
 		$data['column_price'] = $this->language->get('column_price');
@@ -2209,7 +2209,7 @@ class ControllerSaleOrder extends Controller {
 					$option_weight = 0;
 
 					$product_info = $this->model_catalog_product->getProduct($product['product_id']);
-					// << Related Options / Связанные опции 
+					// << Related Options / Связанные опции
 						$ro_settings = $this->config->get('related_options');
 						if ( !$this->model_module_related_options ) {
 							$this->load->model('module/related_options');
@@ -2219,7 +2219,7 @@ class ControllerSaleOrder extends Controller {
 								$product_info['weight'] = (float)$product['weight']/$product['quantity'];
 							}
 						}
-					// >> Related Options / Связанные опции 
+					// >> Related Options / Связанные опции
 
 					if ($product_info) {
 						$option_data = array();
@@ -2324,7 +2324,7 @@ class ControllerSaleOrder extends Controller {
 		$data['lang'] = $this->language->get('code');
 
 		$data['text_pickpacklist'] = $this->language->get('text_pickpacklist');
-		
+
 		$data['text_ppl_invoice_no'] = $this->language->get('text_ppl_invoice_no');
 		$data['text_ppl_order_date'] = $this->language->get('text_ppl_order_date');
 		$data['text_ppl_product_name'] = $this->language->get('text_ppl_product_name');
@@ -2352,24 +2352,24 @@ class ControllerSaleOrder extends Controller {
 
 		$data['column_product'] = $this->language->get('column_product');
 		$data['column_model'] = $this->language->get('column_model');
-		
-		// << Related Options / Связанные опции 
-		
+
+		// << Related Options / Связанные опции
+
 			$data['column_sku'] = $this->language->get('entry_sku');
 			$data['column_upc'] = $this->language->get('entry_upc');
 			$data['column_ean'] = $this->language->get('entry_ean');
 			$data['column_location'] = $this->language->get('entry_location');
 
 			$ro_settings = $this->config->get('related_options');
-			
+
 			if ( !$this->model_module_related_options ) {
 				$this->load->model('module/related_options');
 			}
-			
+
 			$data['ro_installed'] = $this->model_module_related_options->installed();
-			
+
 			if ($data['ro_installed'] && $ro_settings)  {
-			
+
 				$data['ro_fields'] = array();
 				$ro_fields = array('sku', 'upc', 'ean', 'location');
 				foreach ($ro_fields as $ro_field) {
@@ -2378,8 +2378,8 @@ class ControllerSaleOrder extends Controller {
 					}
 				}
 			}
-			
-		// >> Related Options / Связанные опции 
+
+		// >> Related Options / Связанные опции
 		$data['column_quantity'] = $this->language->get('column_quantity');
 		$data['column_price'] = $this->language->get('column_price');
 		$data['column_total'] = $this->language->get('column_total');
@@ -2600,7 +2600,7 @@ class ControllerSaleOrder extends Controller {
 		$order_status_id = $this->request->post['order_status_id'];
 
 		$json['success'] = false;
-		
+
 		/* checking of membership is in the addReward() */
 
 		$reward_order_status = $this->config->get('config_reward_status');
@@ -2616,13 +2616,13 @@ class ControllerSaleOrder extends Controller {
 
 	// Start lalamove
 	public function getLalamoveDetail(){
-	    
+
 		$order_id = $this->request->post['order_id'];
-        
+
         $this->load->model('sale/order');
-        
+
         $order_info = $this->model_sale_order->getOrder($order_id);
-        
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($order_info));
 	}

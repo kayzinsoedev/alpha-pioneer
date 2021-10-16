@@ -1,7 +1,7 @@
 <?php
 class ControllerApiOrder extends Controller {
 	public function add() {
-		
+
 		// BackendCart
 		$this->registry->set('cart', new Cart\Backendcart($this->registry));
 
@@ -99,7 +99,7 @@ class ControllerApiOrder extends Controller {
 
 			if (!$json) {
 				$json['success'] = $this->language->get('text_success');
-				
+
 				$order_data = array();
 
 				// Store Details
@@ -213,13 +213,13 @@ class ControllerApiOrder extends Controller {
 						);
 					}
 
-					// << Related Options / Связанные опции 
-					
+					// << Related Options / Связанные опции
+
 					$order_data['products'][] = array();
 					if ( !$this->model_module_related_options ) {
 						$this->load->model('module/related_options');
 					}
-					
+
 					if (	$this->model_module_related_options->installed() ) {
 						$ro_settings = $this->config->get('related_options');
 						if (isset($ro_settings['spec_sku']) && $ro_settings['spec_sku'] && isset($product['sku'])) {
@@ -235,8 +235,8 @@ class ControllerApiOrder extends Controller {
 							$order_data['products'][count($order_data['products'])-1]['location'] = $product['location'];
 						}
 					}
-					
-					// >> Related Options / Связанные опции 
+
+					// >> Related Options / Связанные опции
 					// Related Options / Связанные опции   replaced : $order_data['products'][] = array(
 					$order_data['products'][count($order_data['products'])-1] = $order_data['products'][count($order_data['products'])-1] + array(
 						'product_id' => $product['product_id'],
@@ -297,7 +297,7 @@ class ControllerApiOrder extends Controller {
 						'taxes'  => &$taxes2,
 						'total'  => &$total2
 				);
-			
+
 				$sort_order = array();
 
 				$results = $this->model_extension_extension->getExtensions('total');
@@ -311,7 +311,7 @@ class ControllerApiOrder extends Controller {
 				foreach ($results as $result) {
 					if ($this->config->get($result['code'] . '_status')) {
 						$this->load->model('extension/total/' . $result['code']);
-						
+
 						// We have to put the totals in an array so that they pass by reference.
 						$this->{'model_extension_total_' . $result['code']}->getTotal($total_data);
 					}
@@ -338,7 +338,7 @@ class ControllerApiOrder extends Controller {
 				} else {
 					$order_data['comment'] = '';
 				}
-				
+
 				if (isset($this->request->post['delivery_date'])) {
 					$order_data['delivery_date'] = $this->request->post['delivery_date'];
 				} else {
@@ -407,7 +407,7 @@ class ControllerApiOrder extends Controller {
 
 				$order_data['reward_earn'] = 0;
 
-				if($this->config->get('reward_status') && $order_data['customer_group_id'] > 0){ 
+				if($this->config->get('reward_status') && $order_data['customer_group_id'] > 0){
 					$this->load->model('extension/total/reward');
 
 					$reward_info = $this->model_extension_total_reward->getRewardInfoByCustomerGroup($order_data['customer_group_id']);
@@ -437,7 +437,7 @@ class ControllerApiOrder extends Controller {
 					$this->registry,
 					$products);
 				}
-				
+
 				// clear cart since the order has already been successfully stored.
 				//$this->cart->clear();
 			}
@@ -458,7 +458,7 @@ class ControllerApiOrder extends Controller {
 	}
 
 	public function edit() {
-		
+
 		// BackendCart
 		$this->registry->set('cart', new Cart\Backendcart($this->registry));
 
@@ -566,7 +566,7 @@ class ControllerApiOrder extends Controller {
 
 				if (!$json) {
 					$json['success'] = $this->language->get('text_success');
-					
+
 					$order_data = array();
 
 					// Store Details
@@ -682,13 +682,13 @@ class ControllerApiOrder extends Controller {
 							);
 						}
 
-					// << Related Options / Связанные опции 
-					
+					// << Related Options / Связанные опции
+
 					$order_data['products'][] = array();
 					if ( !$this->model_module_related_options ) {
 						$this->load->model('module/related_options');
 					}
-					
+
 					if (	$this->model_module_related_options->installed() ) {
 						$ro_settings = $this->config->get('related_options');
 						if (isset($ro_settings['spec_sku']) && $ro_settings['spec_sku'] && isset($product['sku'])) {
@@ -704,8 +704,8 @@ class ControllerApiOrder extends Controller {
 							$order_data['products'][count($order_data['products'])-1]['location'] = $product['location'];
 						}
 					}
-					
-					// >> Related Options / Связанные опции 
+
+					// >> Related Options / Связанные опции
 					// Related Options / Связанные опции   replaced : $order_data['products'][] = array(
 					$order_data['products'][count($order_data['products'])-1] = $order_data['products'][count($order_data['products'])-1] + array(
 							'product_id' => $product['product_id'],
@@ -748,8 +748,8 @@ class ControllerApiOrder extends Controller {
 					$totals = array();
 					$taxes = $this->cart->getTaxes();
 					$total = 0;
-					
-					// Because __call can not keep var references so we put them into an array. 
+
+					// Because __call can not keep var references so we put them into an array.
 					$total_data = array(
 						'totals' => &$totals,
 						'taxes'  => &$taxes,
@@ -767,7 +767,7 @@ class ControllerApiOrder extends Controller {
 							'total'  => &$total2,
 							'order_id'	=> $order_id
 					);
-			
+
 					$sort_order = array();
 
 					$results = $this->model_extension_extension->getExtensions('total');
@@ -781,7 +781,7 @@ class ControllerApiOrder extends Controller {
 					foreach ($results as $result) {
 						if ($this->config->get($result['code'] . '_status')) {
 							$this->load->model('extension/total/' . $result['code']);
-							
+
 							// We have to put the totals in an array so that they pass by reference.
 							if($result['code'] == 'coupon'){
 								// We have to put the totals in an array so that they pass by reference.
@@ -818,7 +818,7 @@ class ControllerApiOrder extends Controller {
 					} else {
 						$order_data['comment'] = '';
 					}
-					
+
 					if (isset($this->request->post['delivery_date'])) {
 						$order_data['delivery_date'] = $this->request->post['delivery_date'];
 					} else {
@@ -855,9 +855,9 @@ class ControllerApiOrder extends Controller {
 
 					$order_data['reward_earn'] = 0;
 
-					if($this->config->get('reward_status') &&  
-					(!isset($this->session->data['reward']) || (int)$this->session->data['reward'] < 1 ) 
-					){ 
+					if($this->config->get('reward_status') &&
+					(!isset($this->session->data['reward']) || (int)$this->session->data['reward'] < 1 )
+					){
 						$this->load->model('extension/total/reward');
 
 						$reward_info = $this->model_extension_total_reward->getRewardInfoByCustomerGroup($order_data['customer_group_id']);
@@ -909,7 +909,7 @@ class ControllerApiOrder extends Controller {
 	}
 
 	public function delete() {
-		
+
 		// BackendCart
 		$this->registry->set('cart', new Cart\Backendcart($this->registry));
 
@@ -954,7 +954,7 @@ class ControllerApiOrder extends Controller {
 	}
 
 	public function info() {
-		
+
 		// BackendCart
 		$this->registry->set('cart', new Cart\Backendcart($this->registry));
 
@@ -999,7 +999,7 @@ class ControllerApiOrder extends Controller {
 	}
 
 	public function history() {
-		
+
 		// BackendCart
 		$this->registry->set('cart', new Cart\Backendcart($this->registry));
 
