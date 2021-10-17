@@ -12,7 +12,7 @@
                 if(isset($this->session->data['wishlist'])){
                     foreach($this->session->data['wishlist'] as $w_pid){
                         $wishlists[]['product_id'] = $w_pid;
-                        
+
                     }
                 }
             }
@@ -25,8 +25,8 @@
             $url = '';
 
             if( is_array($product_id) ){
-                $url = $product_id['url']; 
-                $product_id = $product_id['product_id']; 
+                $url = $product_id['url'];
+                $product_id = $product_id['product_id'];
             }
 
             $this->load->language('component/product_info');
@@ -50,18 +50,18 @@
 
             $image = $this->model_tool_image->resize('no_image.png', $width, $height);
             $image2 = false;
-            
+
             $price = false;
             $special = false;
             $rating = false;
             $tax = false;
 
-            if (is_file(DIR_IMAGE . $product_info['image']) && $product_info['image']) 
+            if (is_file(DIR_IMAGE . $product_info['image']) && $product_info['image'])
                 $image = $this->model_tool_image->resize($product_info['image'], $width, $height);
 
-            if (is_file(DIR_IMAGE . $product_info['image2']) && $product_info['image2']) 
+            if (is_file(DIR_IMAGE . $product_info['image2']) && $product_info['image2'])
                 $image2 = $this->model_tool_image->resize($product_info['image2'], $width, $height);
-            
+
             if ($this->customer->isLogged() || !$this->config->get('config_customer_price')){
                 if ($this->config->get('config_product_decimal_places')) {
                     $price = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
@@ -69,7 +69,7 @@
                     $price = $this->currency->format2($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
                 }
             }
-            
+
             if ((float)$product_info['special']) {
                 if ($this->config->get('config_product_decimal_places')) {
                     $special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
@@ -77,10 +77,10 @@
                     $special = $this->currency->format2($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
                 }
             }
-            
-            if ($this->config->get('config_tax')) 
+
+            if ($this->config->get('config_tax'))
                 $tax = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
-            
+
             if ($this->config->get('config_review_status'))
                 $rating = (int)$product_info['rating'];
 
@@ -160,27 +160,28 @@
                 'product_id'        => $product_info['product_id'],
                 'manufacturer'      => $product_info['manufacturer'],
                 'category'          => $product_info['category'],
-                'thumb'             => $image, 
-                'thumb2'            => $image2, 
+                'model'             => $product_info['model'],
+                'thumb'             => $image,
+                'thumb2'            => $image2,
                 'wishlist'          => $wishlist,
-                'hover_image_change'=> $hover_image_change, 
+                'hover_image_change'=> $hover_image_change,
                 'name'              => $product_info['name'],
                 'minimum'           => $product_info['minimum'],
-				'description'       => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($theme . '_product_description_length')),
-				'price'             => $price,
-				'special'           => $special,
+        				'description'       => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($theme . '_product_description_length')),
+        				'price'             => $price,
+        				'special'           => $special,
                 'special_start'     => $product_info['special_start'],
                 'special_end'       => $product_info['special_end'],
                 'special_start_time'=> $product_info['special_start_time'],
                 'special_end_time'  => $product_info['special_end_time'],
-				'tax'               => $tax,
-				'rating'            => $rating,
+        				'tax'               => $tax,
+        				'rating'            => $rating,
                 'href'              => $product_url,
                 'enquiry'           => ((float)$product_info['price'] <= 0),
                 'sticker'           => $sticker,
                 'out_of_stock'      => $this->config->get('config_stock_checkout')?'':($product_info['quantity']>0?'':'out-of-stock'),
                 'not_avail'         => $not_avail,
-                'options'           => $options, 
+                'options'           => $options,
                 'text_tax'          => $this->language->get('text_tax'),
                 'text_sale'         => $this->language->get('text_sale'),
                 'text_option'       => $this->language->get('text_option'),
@@ -196,6 +197,7 @@
                 'more_options'      => count($options) > 1?$this->language->get('text_more_options_available'):'',
             );
 
+            // debug($product_info['model']);die;
             return $this->load->view('component/product_info', $info);
         }
     }

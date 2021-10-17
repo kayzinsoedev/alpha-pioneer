@@ -250,7 +250,7 @@
         /* primary color */
         .account-container a:hover, .account-container a:focus,  .account-container a.active {
             background: <?= $config_primary_color ?>!important;
-            color:<?= $config_secondary_color ?> !important;
+            color:<?= $config_secondary_color ?>;
         }
 
         .header-top svg path {
@@ -261,7 +261,7 @@
         }
 
         body  .account-container a:hover .icon-font:before, body .account-container a:focus .icon-font:before, body .account-container a:hover h4,body .account-container a:focus h4, body .account-container a:hover p, .account-container a.active .icon-font:before, .account-container a.active p,  body .account-container a.active h3{
-            color:<?= $config_secondary_color ?> !important;
+            color:<?= $config_secondary_color ?>;
         }
 
         .login-header .btn.active {
@@ -299,7 +299,7 @@
         }
 
         .account-account .account-container a:hover, .account-account .account-container a:focus {border: 1px solid <?= $config_secondary_color; ?> !important;}
-        .account-account .account-container a:hover .icon-font:before, .account-account .account-container a:focus .icon-font:before {color: <?= $config_secondary_color; ?> !important;}
+        .account-account .account-container a:hover .icon-font:before, .account-account .account-container a:focus .icon-font:before {color: <?= $config_secondary_color; ?>;}
 
         .primary-color, a:hover, a:focus { color: <?= $config_primary_color ?> }
         .primary-color-bg { background-color: <?= $config_primary_color ?> }

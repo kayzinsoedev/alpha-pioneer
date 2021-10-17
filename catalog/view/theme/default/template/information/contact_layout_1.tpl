@@ -26,9 +26,21 @@
 
 		<div class="row">
 			<div class="col-sm-12 col-md-4 pd-b30">
-				<h3><?= $text_contact_info; ?></h3>
-				<div>
-					<strong><?= $text_telephone; ?>:</strong>
+				<!-- <h3><?= $text_contact_info; ?></h3> -->
+				<h3>Alpha Pioneer</h3><br>
+
+
+				<div class="address">
+					<strong hidden><?= $text_address; ?>: </strong>
+					<address>
+						<?= $address; ?>
+					</address>
+				</div>
+
+				<div class="contact-tel">
+					<!-- <strong> -->
+						<?= $text_telephone; ?>:
+					<!-- </strong> -->
 					<a href="tel:<?= $store_telephone; ?>" alt="<?= $store_telephone; ?>" title="<?= $store_telephone; ?>" ><?= $store_telephone; ?></a><br />
 
 				</div>
@@ -38,17 +50,12 @@
 					</div>
 				<?php } ?>
 				<div class="email">
-					<strong><?= $text_contact_email; ?>: </strong>
+					<!-- <strong><?= $text_contact_email; ?>: </strong> -->
 					<a href="mailto:<?= $store_email; ?>" alt="<?= $store_email; ?>" title="<?= $store_email; ?>" ><?= $store_email; ?></a><br />
 				</div>
 
 
-				<div>
-					<strong><?= $text_address; ?>: </strong>
-					<address>
-						<?= $address; ?>
-					</address>
-				</div>
+
 				<div>
 					<?php if ($open) { ?>
 					<strong><?= $text_open; ?></strong><br />
@@ -63,7 +70,8 @@
 			</div>
 			<div class="col-sm-12 col-md-8 pd-b30">
 				<form id="contact-us-form" action="<?= $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-					<h3><?= $text_contact; ?></h3>
+					<h3><?= $text_contact; ?></h3><br>
+					<div class="contact-sub"><?=$text_contact_sub;?></div>
 					<div class="contact-body">
 						<div class="form-group required">
 							<label class="control-label" for="input-name"><?= $entry_name; ?></label>

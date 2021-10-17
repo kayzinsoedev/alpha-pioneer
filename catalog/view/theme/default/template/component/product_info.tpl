@@ -299,6 +299,10 @@
 				</div>
 			</div>
 
+			<?php if(isset($model)){ ?>
+					<div class="model"><?=$model;?></div>
+			<?php } ?>
+
 			<div class="flex flex-wrap price_button">
 				<div class="product-details product-price-<?=$product_id?>">
 						<?php if ($price && !$enquiry) { ?>

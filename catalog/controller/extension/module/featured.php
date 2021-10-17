@@ -49,7 +49,8 @@ class ControllerExtensionModuleFeatured extends Controller {
 
 		$this->module_id++;
 
-		
+
+		$data['link'] = $setting['link'];
 
 		return $this->load->view('extension/module/featured_slick', $data);
 	}

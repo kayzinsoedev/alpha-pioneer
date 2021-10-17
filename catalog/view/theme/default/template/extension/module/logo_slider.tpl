@@ -3,9 +3,14 @@
 </h2>
 <div class="logo-slider">
   <?php foreach ($items as $item) { ?>
-    <div class="item">
-      <img src="image/<?php echo $item['image']; ?>" class="img-responsive"/>
-    </div>
+    <a href="<?=$item['link'];?>" >
+        <div class="item">
+          <img src="image/<?php echo $item['image']; ?>" class="img-responsive"/>
+
+          <div class="b-name"><?=$item['name'];?></div>
+        </div>
+   </a>
+
   <?php } ?>
 </div>
 

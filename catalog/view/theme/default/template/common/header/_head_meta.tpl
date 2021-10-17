@@ -96,7 +96,7 @@
 	<?php }*/ // move to footer.tpl ?>
 
 	<script defer="defer" src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	
+
 	<?php if($class == 'common-home') { ?>
 	<script defer="defer" src="catalog/view/javascript/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
 	<?php }else{ ?>
@@ -121,18 +121,18 @@
 
 	<script defer="defer" src="catalog/view/javascript/aos/aos.js" type="text/javascript"></script>
 	<?php */ // combined to combined.min.js ?>
-	
+
 	<script defer="defer" src="catalog/view/javascript/combined.min.js" type="text/javascript"></script>
 
 	<!-- <script src="catalog/view/javascript/quantityincrementdecrement.js" type="text/javascript"></script> --> <!--Added in Alpha.js -->
 	<script defer="defer" src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.5.0/dist/fetch.umd.min.js" type="text/javascript"></script>
-	
+
 	<?php if($class == 'common-home') { ?>
 	<script defer="defer" src="catalog/view/javascript/common.js" type="text/javascript"></script>
 	<?php }else{ ?>
 	<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 	<?php } ?>
-	
+
 	<?php if($class != 'common-home') { ?>
 	<script defer="defer" src="catalog/view/javascript/jquery.qrcode.min.js" type="text/javascript"></script>
 	<script defer="defer" src="catalog/view/javascript/qrcode.min.js" type="text/javascript"></script>
@@ -140,14 +140,14 @@
 
 	<?php if ($is_mpgs) { ?>
 		<?php if ($mpgs_mode == 'test') { ?>
-			<script src="https://test-gateway.mastercard.com/checkout/version/56/checkout.js" 
-				data-error="errorCallback" 
+			<script src="https://test-gateway.mastercard.com/checkout/version/56/checkout.js"
+				data-error="errorCallback"
 				data-cancel="cancelCallback"
 				data-complete="<?=$mpgs_callback?>"
 			></script>
 		<?php } else { ?>
-			<script src="https://ap-gateway.mastercard.com/checkout/version/56/checkout.js" 
-				data-error="errorCallback" 
+			<script src="https://ap-gateway.mastercard.com/checkout/version/56/checkout.js"
+				data-error="errorCallback"
 				data-cancel="cancelCallback"
 				data-complete="<?=$mpgs_callback?>"
 			></script>
@@ -158,7 +158,7 @@
 			}
 		</script>
 	<?php } ?>
-	<?php foreach ($links as $link) { 
+	<?php foreach ($links as $link) {
 		if($link['rel'] == 'canonical') continue; ?>
 		<link href="<?=$link['href']; ?>" rel="<?=$link['rel']; ?>" />
 	<?php } ?>
@@ -223,5 +223,5 @@
 		<link href="catalog/view/theme/default/stylesheet/bootstrap-rtl.css" rel="stylesheet">
 		<link href="catalog/view/theme/default/stylesheet/bootstrap-rtl.min.css" rel="stylesheet">
 		<link href="catalog/view/theme/default/stylesheet/rtl.css" rel="stylesheet">
-	<?php } ?>    
+	<?php } ?>
 </head>

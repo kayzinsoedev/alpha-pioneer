@@ -175,6 +175,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 			$data['description'] = array();
 		}
 
+
 		$this->response->setOutput($this->load->view('extension/module/featured', $data));
 	}
 

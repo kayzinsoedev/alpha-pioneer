@@ -7,9 +7,10 @@ $_ = array(
 // Text
     'text_location'  => 'Our Location',
     'text_store'     => 'Our Stores',
-    'text_contact'   => 'Get In Touch',
+    'text_contact'   => 'Get In Touch with Us',
+    'text_contact_sub'   => 'Email us with any questions and enquiries. We would be happy to answer to your questions and we’ll be in touch',
     'text_address'   => 'Address',
-    'text_telephone' => 'Telephone',
+    'text_telephone' => 'Tel',
     'text_fax'       => 'Fax',
     'text_open'      => 'Opening Times',
     'text_comment'   => 'Comments',

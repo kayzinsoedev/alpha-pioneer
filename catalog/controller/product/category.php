@@ -235,6 +235,9 @@ class ControllerProductCategory extends Controller {
 			$type_of_sort['rating'] = 'rating';
 		}
 
+
+
+
 		$data['sorts'] = array();
 
 		// Default
@@ -242,6 +245,8 @@ class ControllerProductCategory extends Controller {
 			'text'  => $this->language->get('text_default_asc'),
 			'value' => 'sort_order-ASC',
 		);
+
+
 
 		// The rest of the ordering from $type_of_sort
 		foreach($type_of_sort as $type => $column){
@@ -254,6 +259,8 @@ class ControllerProductCategory extends Controller {
 				'value' => $column.'-DESC',
 			);
 		}
+
+		// debug($type_of_sort);
 		// End Sort
 
 		// Limit
@@ -318,6 +325,7 @@ class ControllerProductCategory extends Controller {
 		$data = $this->load->controller('component/common', $data);
 
 		$data['category_layout'] = $this->config->get('theme_default_product_category_layout_setting');
+
 
 		$this->response->setOutput($this->load->view('product/category', $data));
 	}

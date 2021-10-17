@@ -2,8 +2,8 @@
 class ControllerProductSearch extends Controller {
 	public function index() {
 		$this->load->language('product/search');
-		
-		// << Related Options / Связанные опции  
+
+		// << Related Options / Связанные опции
 		$this->load->language('module/related_options');
 		$data['text_ro_clear_options'] 			= $this->language->get('text_ro_clear_options');
 		// >> Related Options / Связанные опции
@@ -17,7 +17,7 @@ class ControllerProductSearch extends Controller {
 		$theme = $this->config->get('config_theme');
 
 		$sort_default = 'p.sort_order';
-		
+
 		if($this->config->get('product_category_sort_order_status') && isset($this->request->get['category_id']) && (int)$this->request->get['category_id']){
 			$sort_default = 'p2co.sort_order, p.sort_order, LCASE(pd.name)';
 		}
@@ -55,12 +55,12 @@ class ControllerProductSearch extends Controller {
 
 			if($var=='sort'){
 				$sort_n_order = explode('-', $default);
-				
+
 				$order = $listing_conditions[$var];
 				if(count($sort_n_order) > 1){
 					$order	=	$sort_n_order[1];
 				}
-				
+
 				${$var}	=	$sort_n_order[0];
 			}
 			elseif($var != 'order'){
@@ -71,7 +71,7 @@ class ControllerProductSearch extends Controller {
 		foreach($url_filter as $url => $skip){
 			${$url}	= '';
 			foreach ($listing_conditions as $var => $default){
-				if( !strpos( '_' . $skip, $var) && $default){ 
+				if( !strpos( '_' . $skip, $var) && $default){
 					${$url} .= '&' . $var . '=' . ${$var};
 				}
 			}
@@ -418,7 +418,7 @@ class ControllerProductSearch extends Controller {
 			);
 
 			$data = array_merge($this->load->controller('component/pagination', $page_data), $data);
-			
+
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
 			    $this->document->addLink($this->url->link('product/search', '', true), 'canonical');
@@ -492,7 +492,7 @@ class ControllerProductSearch extends Controller {
 
 			$currency_code = $this->session->data['currency'];
 			$content_type = 'product';
-			
+
 			if(isset($data['fbq_array']) && $data['fbq_array']){
 				$data['pixel_tracking'] = "
 					<script type='text/javascript'>

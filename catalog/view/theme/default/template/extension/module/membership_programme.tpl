@@ -1,5 +1,5 @@
 <div class="membership-section">
-    <h1><?=$heading;?></h1>
+    <h2><?=$heading;?></h2>
     <img src="image/<?=$image;?>" alt="membership">
     <div class="membership-title main"><?=$title;?></div>
     <div class="membership-desc"><?=$description;?></div>
