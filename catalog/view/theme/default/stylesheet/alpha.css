@@ -591,7 +591,7 @@ body.product-product .custom-add-section .btn-primary{
 }
 
 .cat-gutter:hover .category {
-    transform: unset;
+    /* transform: unset; */
 }
 
 .fcategory-img{
@@ -881,7 +881,9 @@ body.product-product .product-price.old-prices,
 .product-price.old-prices,
 .product-special-price.new-prices,
 .old-prices,
-.product-product .old-prices, .product-product .product-special-price{
+.product-product .old-prices, .product-product .product-special-price,
+.price-special
+{
       font-size: calc(22px + (17 - 12) * (100vw - 320px) / (1920 - 320)) !important;
       font-family: 'Poppins ExtraBold';
       padding-right: calc(10px + (17 - 12) * (100vw - 320px) / (1920 - 320));
@@ -1573,6 +1575,20 @@ span#max {
     float: right;
 }
 
+.bk-top{
+  text-align: center;
+  cursor: pointer;
+}
+
+.top-img {
+    padding: 15px 0px;
+    width: 20px;
+}
+
+body #footer-area{
+  margin-top: 0;
+}
+
 
 /* IE */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -1589,6 +1605,17 @@ span#max {
      .product-category select::-ms-expand {
         display: none;
     }
+
+    .featured-categories{
+      display: -ms-flexbox;
+    }
+    .cat-gutter:first-child{
+        flex: 0 0 28%;
+    }
+    .cat-gutter:nth-child(3), .cat-gutter:nth-child(4), .cat-gutter:nth-child(5){
+        flex: 0 0 30.5%;
+    }
+
 }
 
 /* IE */
@@ -1598,6 +1625,9 @@ span#max {
 /*Responsive */
 
 @media screen and (max-width:1536px) and (min-width: 1366px){
+  .back-text {
+    font-size: calc(11px + (20 - 17) * (100vw - 375px) / (1900 - 375));
+  }
   body .header-container .header-menu #main-menu>li>a {
       padding-right: 3vw !important;
   }
@@ -1632,7 +1662,7 @@ span#max {
     {
         padding: 0px calc(30px + (20 - 17) * (100vw - 375px) / (1900 - 375));
     }
-    .section-space.fcategory, .section-space.featured.featured-31, .section-space.featured.featured-34, .section-space.featured.featured-35, .section-space.home_promotion {
+    .section-space.fcategory, .section-space.featured.featured-31, .section-space.featured.featured-40, .section-space.featured.featured-34, .section-space.featured.featured-35, .section-space.home_promotion {
     padding: calc(50px + (20 - 17) * (100vw - 375px) / (1900 - 375)) calc(20px + (20 - 17) * (100vw - 375px) / (1900 - 375)) !important;
     }
     .slider-slideshow-description-texts{
@@ -1875,16 +1905,10 @@ span#max {
   .custom-header-container,
   .works-container,
   .benefits-container,
-  /* .custom-product-container, */
-  /* .custom-footer-container,  */
-  /* .custom-footer-bottom,  */
-  /* .custom-product-inner-container, */
-  /* .custom-brand-container, */
   .custom-contact-container,
   .banner-container
-  /* .custom-info-container */
   {
-    padding: 0px;
+    /* padding: 0px; */
   }
   .membership-section {
     width: 90%;
@@ -1916,6 +1940,9 @@ span#max {
 }
 
 @media (max-width: 540px){
+  .footer-contact-links0 {
+    display: none;
+  }
   #account_tigger_open {
     top: 14%;
   }

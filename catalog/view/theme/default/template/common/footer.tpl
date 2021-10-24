@@ -84,7 +84,7 @@ $('#help-modal2').load(href);
 			<div class="footer-upper-contet">
 				<?php if ($menu) { ?>
 					<?php foreach($menu as $menu_count => $links){ ?>
-					<div class="footer-contact-links">
+					<div class="footer-contact-links<?=$menu_count;?>">
 						<h5>
 							<?php if($links['href'] != '#'){ ?>
 							<?= $links['name']; ?>

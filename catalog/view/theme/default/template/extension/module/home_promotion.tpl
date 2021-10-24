@@ -15,10 +15,24 @@
        </div>
   <?php } ?>
 </div>
-<span id="ToTop" style="display: inline;"><p class="back-text">Back to Top</p></span>
-<!-- <span id="ToTop" style="display: inline;"><span>Back to Top</span></span> -->
+<!-- <div id="ToTop" style="display: inline;">
+  <div class="back-text">Back to Top</div>
+</div> -->
+
+    <div class="bk-top" onclick="scrollToTop()">
+        <img src="image/catalog/general/top.png" alt="top" class="top-img img-responsive">
+        <div class="back-text">Back to Top</div>
+    </div>
+
+
 
 <script>
+
+function scrollToTop() {
+          $("html, body").animate({ scrollTop: 0 }, 1000);
+      }
+
+
     jQuery(document).ready(function ($) {
           $(".home-promotion").slick({
           dots: true,
