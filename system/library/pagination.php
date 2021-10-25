@@ -18,10 +18,10 @@ class Pagination {
 	public $url = '';
 	public $text_first = '|&lt;';
 	public $text_last = '&gt;|';
-	// public $text_next = '&gt;';
-	// public $text_prev = '&lt;';
-  public $text_next  = '<img src="image/catalog/general/right.png" alt="right-arrow">';
-	public $text_prev  = '<img src="image/catalog/general/left.png" alt="left-arrow">';
+	public $text_next = '&gt;';
+	public $text_prev = '&lt;';
+  // public $text_next  = '<img src="image/catalog/general/right.png" alt="right-arrow">';
+	// public $text_prev  = '<img src="image/catalog/general/left.png" alt="left-arrow">';
 
 	/**
      *

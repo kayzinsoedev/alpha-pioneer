@@ -921,7 +921,7 @@ body.product-product .product-price.old-prices,
 }
 
 .product-block .product-name {
-    flex: 0 0 calc(15% - 10px);
+    flex: 0 0 calc(20% - 10px);
     margin-top: calc(15px + (17 - 12) * (100vw - 320px) / (1920 - 320));
 }
 
