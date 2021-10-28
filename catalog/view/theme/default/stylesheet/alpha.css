@@ -33,6 +33,18 @@
   src: url('fonts/Poppins-Medium.ttf');
 }
 
+/* .product-product .vertical .product-image-additional-container .slick-track {
+    display: block;
+    width: auto !important;
+    margin: 20px 0 !important;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+    margin: 20px;
+} */
 
 h1{
   color: #000000;
@@ -1614,6 +1626,29 @@ body #footer-area{
     }
     .cat-gutter:nth-child(3), .cat-gutter:nth-child(4), .cat-gutter:nth-child(5){
         flex: 0 0 30.5%;
+    }
+
+    .custom-add-section .btn-primary{
+      background-position :0;
+    }
+
+    #waiting_list_submit{
+      transform: unset !important;
+    }
+    #waiting_list .flex-group button{
+      right: -70px;
+    }
+
+    .fixed-header .header-container .header-menu #main-menu li > ul > li{
+      list-style: none !important;
+      list-style-type: none !important;
+    }
+
+    .fixed-header .header-container .header-menu #main-menu li > ul > li:before{
+      content: "";
+      list-style: none !important;
+      list-style-type: none !important;
+      background: none !important;
     }
 
 }
